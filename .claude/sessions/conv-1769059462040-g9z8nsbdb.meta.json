@@ -1,0 +1,23 @@
+{
+  "id": "conv-1769059462040-g9z8nsbdb",
+  "title": "请翻译成中文",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1769059462040,
+  "updatedAt": 1769059493538,
+  "lastResponseAt": 1769059492906,
+  "sessionId": "d7b7f313-7abb-45c5-b7a0-c975a503265c",
+  "sdkSessionId": "d7b7f313-7abb-45c5-b7a0-c975a503265c",
+  "currentNote": "02_领域/README.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  },
+  "displayContentMap": {
+    "_current_note__02____README_md___current_note____q_71_313989047": "请翻译成中文"
+  }
+}
