@@ -1,0 +1,30 @@
+{
+  "id": "conv-1769062570043-e0r0jd34r",
+  "title": "翻译文档为中文并替换原文件",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769062570043,
+  "updatedAt": 1769062667538,
+  "lastResponseAt": 1769062653271,
+  "sessionId": "928b5ee7-fe31-446b-9bc4-53a194c1b71f",
+  "sdkSessionId": "928b5ee7-fe31-446b-9bc4-53a194c1b71f",
+  "currentNote": "06_元数据/Templates/Daily Note Template.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 13,
+    "cacheCreationInputTokens": 783,
+    "cacheReadInputTokens": 55667,
+    "contextWindow": 200000,
+    "contextTokens": 56463,
+    "percentage": 28
+  },
+  "toolDiffData": {
+    "toolu_01DnQC6o65hLnCEbB788fQu2": {
+      "filePath": "06_元数据/Templates/Daily Note Template.md",
+      "originalContent": "# {{date:YYYY-MM-DD}}\n\n## Capture\n<!-- Quick thoughts, links, ideas throughout the day -->\n- \n\n## Questions\n<!-- What am I curious about today? -->\n- \n\n## Insights\n<!-- What did I learn or realize? -->\n- \n\n## Connections\n<!-- Links to other notes or ideas -->\n- \n\n## For Tomorrow\n<!-- What needs follow-up? -->\n- \n\n---\n*End of day: Ask Claude Code to review and find connections*",
+      "newContent": "# {{date:YYYY-MM-DD}}\n\n## 捕捉\n<!-- 一天中的快速想法、链接、创意 -->\n-\n\n## 问题\n<!-- 我今天对什么感到好奇？ -->\n-\n\n## 洞察\n<!-- 我学到或意识到了什么？ -->\n-\n\n## 连接\n<!-- 与其他笔记或想法的链接 -->\n-\n\n## 明天\n<!-- 有什么需要跟进的？ -->\n-\n\n---\n*一天结束时：让 Claude Code 审查并寻找连接*\n"
+    }
+  },
+  "displayContentMap": {
+    "_current_note__06_____Templates_Daily_Note_Templat_107_2063334962": "帮我把这个文档翻译成中文，替换原文件"
+  }
+}

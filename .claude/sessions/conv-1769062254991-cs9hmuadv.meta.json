@@ -1,0 +1,30 @@
+{
+  "id": "conv-1769062254991-cs9hmuadv",
+  "title": "翻译内容为中文",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769062254992,
+  "updatedAt": 1769062474392,
+  "lastResponseAt": 1769062402104,
+  "sessionId": "9c565636-048f-45ce-9deb-a8f008e769c7",
+  "sdkSessionId": "9c565636-048f-45ce-9deb-a8f008e769c7",
+  "currentNote": "05_附件/README.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 12,
+    "cacheCreationInputTokens": 2470,
+    "cacheReadInputTokens": 58891,
+    "contextWindow": 200000,
+    "contextTokens": 61373,
+    "percentage": 31
+  },
+  "toolDiffData": {
+    "toolu_013FHybJWh5LpAszXfVN5WLH": {
+      "filePath": "05_附件/README.zh-CN.md",
+      "originalContent": "",
+      "newContent": "# 📎 附件\n\n用于存储图片、PDF和其他非文本文件。\n\n## 目的\n\n集中存放:\n- 图片和截图\n- PDF和文档\n- 电子表格和数据文件\n- 音频和视频文件\n- 笔记中引用的任何二进制文件\n\n## 组织结构\n\n```\n05_Attachments/\n├── Organized/          # 已处理的文件,有良好的命名\n│   ├── Images/\n│   ├── PDFs/\n│   └── Data/\n├── IMG_*.png          # 未处理的手机图片\n├── Screenshot*.png    # 未处理的截图\n├── CleanShot*.png    # 未处理的CleanShot文件\n└── *.pdf             # 各种PDF文件\n```\n\n## 命名规范\n\n### 处理前\n- `IMG_1234.png` (来自手机)\n- `Screenshot 2024-03-15 at 2.30.45 PM.png`\n- `CleanShot 2024-03-15 at 14.30.45.png`\n- `document(1).pdf`\n\n### 处理后\n- `2024-03-15_项目架构图.png`\n- `2024-03-15_会议白板.jpg`\n- `API文档_v2.pdf`\n- `客户访谈记录.pdf`\n\n## 辅助脚本\n\n使用 `pnpm` 运行:\n\n### 查看状态\n- `attachments:list` - 列出未处理的文件\n- `attachments:count` - 统计未处理文件数量\n- `attachments:organized` - 统计已整理文件数量\n- `attachments:sizes` - 显示最大的文件\n- `attachments:recent` - 最近7天添加的文件\n\n### 查找问题\n- `attachments:orphans` - 未被任何地方引用的文件\n- `attachments:refs [filename]` - 查找文件的引用\n\n### 整理\n- `attachments:create-organized` - 创建Organized文件夹\n\n## Claude Code 工作流\n\n### 处理截图\n```\n查看05_Attachments中的最近截图。\n根据内容建议更好的文件名。\n帮我整理它们。\n```\n\n### 查找孤立文件\n```\n查找所有未被任何笔记引用的附件。\n是否应该删除它们?\n```\n\n### 批量重命名\n```\n检查Attachments中未处理的图片。\n根据内容建议描述性的文件名。\n```\n\n### 清理\n```\n查找Attachments中的重复图片。\n查找超过10MB的文件。\n哪些可以压缩或删除?\n```\n\n## 最佳实践\n\n### 文件大小\n- 图片保持在2MB以下以适配Git\n- 压缩大型PDF\n- 视频使用外部存储\n- 提交前优化图片\n\n### 命名\n- 包含日期: `YYYY-MM-DD`\n- 描述性但简洁\n- 使用下划线而非空格\n- 如相关,包含版本号\n\n### 链接\n```markdown\n# 嵌入图片\n![[05_Attachments/Organized/diagram.png]]\n\n# 链接PDF\n[[05_Attachments/Organized/document.pdf]]\n\n# 带描述\n![[05_Attachments/Organized/chart.png|销售图表Q1]]\n```\n\n## 处理工作流\n\n1. **捕获**: 将文件保存到 `05_Attachments/`\n2. **审查**: 查看内容,确定目的\n3. **重命名**: 给予描述性的、带日期的名称\n4. **整理**: 移动到 `Organized/` 子文件夹\n5. **链接**: 更新笔记中的引用\n6. **清理**: 删除孤立文件\n\n## Claude Code 提示词\n\n### 视觉分析\n```\n分析Attachments中的图片。\n它们包含什么内容?\n建议合适的名称和组织方式。\n```\n\n### 批量处理\n```\n处理本周所有CleanShot文件。\n根据内容重命名。\n移动到Organized。\n```\n\n### 存储审计\n```\n分析附件存储:\n- 总大小\n- 最大文件\n- 文件类型分布\n- 孤立文件\n```\n\n## 提示\n\n- **每周处理** - 不要让文件堆积\n- **立即命名** - 上下文会很快消失\n- **有目的地链接** - 只嵌入有价值的内容\n- **积极压缩** - 存储会累积\n- **大胆删除** - 不是每个截图都重要\n\n## Git 注意事项\n\n### .gitignore 建议\n```\n*.mp4\n*.mov\n*.zip\n.DS_Store\nfiles_over_10mb/\n```\n\n### 对于大文件\n- 超过10MB的文件使用 Git LFS\n- 考虑外部存储\n- 链接到云存储\n- 本地保留但添加到gitignore\n\n## 记住\n\n附件是支持你的笔记,而不是替代它们。一个命名良好、组织有序的附件胜过一千张随机截图。使用 Claude Code 的视觉能力来高效地处理和组织可视化内容。\n"
+    }
+  },
+  "displayContentMap": {
+    "_current_note__05____README_md___current_note____q_72_3036090359": "帮我翻译成中文"
+  }
+}

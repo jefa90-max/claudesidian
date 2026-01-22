@@ -29,14 +29,14 @@ Scrapes a single URL and saves as markdown.
 Scrapes multiple URLs and auto-generates filenames.
 
 ```bash
-# Requires FIRECRAWL_API_KEY environment variable
+# 需要 FIRECRAWL_API_KEY 环境变量
 
-# Basic usage - saves to 00_Inbox/Clippings/
+# 基本用法 - 保存到 00_收件箱/剪藏/
 .scripts/firecrawl-batch.sh <url1> <url2> <url3>
 
-# Custom output directory
-.scripts/firecrawl-batch.sh -o 01_Projects/Research/ <url1> <url2>
-.scripts/firecrawl-batch.sh --output-dir 03_Resources/Articles/ <url1> <url2>
+# 自定义输出目录
+.scripts/firecrawl-batch.sh -o 01_项目/研究/ <url1> <url2>
+.scripts/firecrawl-batch.sh --output-dir 03_资源/文章/ <url1> <url2>
 ```
 
 ### Transcript Extraction
@@ -46,11 +46,11 @@ Scrapes multiple URLs and auto-generates filenames.
 Extracts transcripts from YouTube videos.
 
 ```bash
-# Basic usage - saves to 00_Inbox/Clippings/
+# 基本用法 - 保存到 00_收件箱/剪藏/
 .scripts/transcript-extract.sh <youtube-url>
 
-# Custom output directory
-.scripts/transcript-extract.sh <youtube-url> 01_Projects/Research/
+# 自定义输出目录
+.scripts/transcript-extract.sh <youtube-url> 01_项目/研究/
 ```
 
 ## NPM Scripts
@@ -61,13 +61,13 @@ Run these from the vault root with `pnpm`:
 | ------------------------------ | ------------------------------------- |
 | `attachments:list`             | Show first 20 unprocessed attachments |
 | `attachments:count`            | Count unprocessed attachments         |
-| `attachments:organized`        | Count files in Organized folder       |
+| `attachments:organized`        | 统计已整理文件夹中的文件数量          |
 | `attachments:unprocessed`      | Same as count                         |
 | `attachments:refs <file>`      | Find references to a specific file    |
 | `attachments:sizes`            | Show 20 largest attachment files      |
 | `attachments:orphans`          | Find unreferenced attachments         |
 | `attachments:recent`           | Show files added in last 7 days       |
-| `attachments:create-organized` | Create the Organized subfolder        |
+| `attachments:create-organized` | 创建"已整理"子文件夹                  |
 
 ## Setup Requirements
 

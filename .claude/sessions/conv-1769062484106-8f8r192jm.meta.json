@@ -1,0 +1,30 @@
+{
+  "id": "conv-1769062484106-8f8r192jm",
+  "title": "我注意到你的请求不够完整 - 你要求翻译成中文并直接替换原文件，但没有提供：\n\n1. **需要...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769062484106,
+  "updatedAt": 1769062665515,
+  "lastResponseAt": 1769062571089,
+  "sessionId": "b2a7b17e-5ac9-4de6-b249-e4ec08739465",
+  "sdkSessionId": "b2a7b17e-5ac9-4de6-b249-e4ec08739465",
+  "currentNote": "06_元数据/README.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 13,
+    "cacheCreationInputTokens": 4024,
+    "cacheReadInputTokens": 56641,
+    "contextWindow": 200000,
+    "contextTokens": 60678,
+    "percentage": 30
+  },
+  "toolDiffData": {
+    "toolu_0124GCDMj7GNEnnf7VRi1eJQ": {
+      "filePath": "06_元数据/README.md",
+      "originalContent": "# ⚙️ Metadata\n\nVault configuration, documentation, and organizational tools.\n\n## Purpose\n\nThe metadata folder contains:\n- Documentation about the vault\n- Templates for consistent note creation\n- Reference guides and how-tos\n- Agent configurations\n- Workflow documentation\n\n## Structure\n\n```\n06_Metadata/\n├── Reference/         # Guides and documentation\n├── Templates/        # Note templates\n├── Agents/          # Claude Code agent configs\n├── Workflows/       # Documented processes\n└── Archive/        # Old configurations\n```\n\n## What Lives Here\n\n### Reference\n- This vault's documentation\n- Claude Code prompt library\n- Style guides\n- Workflow documentation\n- Learning resources\n\n### Templates\n- Project templates\n- Daily note templates\n- Meeting templates\n- Research templates\n- Review templates\n\n### Agents\n- Thinking partner instructions\n- Research assistant config\n- Editor agent setup\n- Custom agent definitions\n\n### Workflows\n- Weekly review process\n- Project completion checklist\n- Inbox processing guide\n- Archive procedures\n\n## Using Templates\n\n### Manual\n1. Copy template content\n2. Create new note\n3. Paste and fill in\n\n### With Claude Code\n```\nCreate a new project using the project template.\nName it [Project Name] and put it in 01_Projects.\n```\n\n## Creating Custom Agents\n\nSave agent instructions as markdown files:\n\n```markdown\n# Agent: [Name]\n\nYou are a [role description].\n\n## Core Behaviors\n- Behavior 1\n- Behavior 2\n\n## Workflow\n1. Step 1\n2. Step 2\n\n## Constraints\n- Don't do X\n- Always do Y\n```\n\nThen reference in Claude Code:\n```\nUse the instructions in 06_Metadata/Agents/[agent].md\nand help me with [task].\n```\n\n## Claude Code Prompts\n\n### Template Usage\n```\nShow me available templates in 06_Metadata/Templates.\nCreate a new [type] note using the appropriate template.\n```\n\n### Documentation\n```\nCheck 06_Metadata/Reference for documentation on [topic].\nUpdate the guide based on what we just learned.\n```\n\n### Workflow Execution\n```\nRun the weekly review workflow from 06_Metadata/Workflows.\nGuide me through each step.\n```\n\n## Maintenance\n\n### Regular Updates\n- Update templates based on usage\n- Document new workflows as they emerge\n- Archive outdated configurations\n- Keep reference docs current\n\n### Version Control\n- Track changes to workflows\n- Document why changes were made\n- Keep archive of old versions\n- Date major updates\n\n## Best Practices\n\n- **Document as you go** - Capture workflows while fresh\n- **Iterate templates** - Improve based on usage\n- **Share configurations** - What works for you might help others\n- **Keep it simple** - Complex systems break\n- **Date everything** - Context matters\n\n## Remember\n\nMetadata is the operating system of your vault. Good metadata means consistent structure, repeatable workflows, and scalable growth. This is where you document not just what you know, but how you work.",
+      "newContent": "# ⚙️ 元数据\n\nVault 配置、文档和组织工具。\n\n## 目的\n\n元数据文件夹包含：\n- 关于 vault 的文档\n- 用于创建一致笔记的模板\n- 参考指南和操作指南\n- Agent 配置\n- 工作流文档\n\n## 结构\n\n```\n06_元数据/\n├── Reference/         # 指南和文档\n├── Templates/        # 笔记模板\n├── Agents/          # Claude Code agent 配置\n├── Workflows/       # 文档化的流程\n└── Archive/        # 旧配置\n```\n\n## 内容说明\n\n### Reference（参考）\n- 本 vault 的文档\n- Claude Code 提示词库\n- 样式指南\n- 工作流文档\n- 学习资源\n\n### Templates（模板）\n- 项目模板\n- 每日笔记模板\n- 会议模板\n- 研究模板\n- 回顾模板\n\n### Agents（代理）\n- 思考伙伴指令\n- 研究助手配置\n- 编辑器代理设置\n- 自定义代理定义\n\n### Workflows（工作流）\n- 每周回顾流程\n- 项目完成清单\n- 收件箱处理指南\n- 归档程序\n\n## 使用模板\n\n### 手动方式\n1. 复制模板内容\n2. 创建新笔记\n3. 粘贴并填写\n\n### 使用 Claude Code\n```\n使用项目模板创建一个新项目。\n命名为 [项目名称] 并放在 01_Projects 中。\n```\n\n## 创建自定义 Agents\n\n将 agent 指令保存为 markdown 文件：\n\n```markdown\n# Agent: [名称]\n\n你是一个 [角色描述]。\n\n## 核心行为\n- 行为 1\n- 行为 2\n\n## 工作流\n1. 步骤 1\n2. 步骤 2\n\n## 约束\n- 不要做 X\n- 始终做 Y\n```\n\n然后在 Claude Code 中引用：\n```\n使用 06_元数据/Agents/[agent].md 中的指令\n帮我完成 [任务]。\n```\n\n## Claude Code 提示词\n\n### 模板使用\n```\n向我展示 06_元数据/Templates 中的可用模板。\n使用适当的模板创建一个新的 [类型] 笔记。\n```\n\n### 文档\n```\n在 06_元数据/Reference 中查看 [主题] 的文档。\n根据我们刚学到的内容更新指南。\n```\n\n### 工作流执行\n```\n从 06_元数据/Workflows 运行每周回顾工作流。\n引导我完成每个步骤。\n```\n\n## 维护\n\n### 定期更新\n- 根据使用情况更新模板\n- 记录新出现的工作流\n- 归档过时的配置\n- 保持参考文档最新\n\n### 版本控制\n- 跟踪工作流的变更\n- 记录为什么进行更改\n- 保留旧版本的存档\n- 标注主要更新日期\n\n## 最佳实践\n\n- **边做边记录** - 趁记忆犹新时捕捉工作流\n- **迭代模板** - 根据使用情况改进\n- **分享配置** - 对你有用的可能也能帮助他人\n- **保持简单** - 复杂的系统容易崩溃\n- **标注日期** - 上下文很重要\n\n## 记住\n\n元数据是你的 vault 的操作系统。良好的元数据意味着一致的结构、可重复的工作流和可扩展的增长。这是你不仅记录知识，还记录工作方式的地方。\n"
+    }
+  },
+  "displayContentMap": {
+    "_current_note__06_____README_md___current_note_____82_2427923290": "请帮我翻译成中文，直接替换原文件"
+  }
+}

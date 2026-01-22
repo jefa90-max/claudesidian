@@ -1,202 +1,201 @@
-# 🗄️ Archive
+# 🗄️ 归档
 
-Inactive items preserved for future reference.
+为未来参考保留的非活跃项目。
 
-## Purpose
+## 目的
 
-The Archive stores:
+归档存储:
 
-- Completed projects with their outputs
-- Inactive areas no longer maintained
-- Old notes for historical reference
-- Deprecated resources
-- Past experiments and iterations
+- 已完成的项目及其成果
+- 不再维护的非活跃领域
+- 历史参考的旧笔记
+- 已弃用的资源
+- 过去的实验和迭代
 
-## What Goes Here
+## 什么内容应该放在这里
 
-### From Projects
+### 来自项目
 
-- Completed projects with final deliverables
-- Cancelled projects with lessons learned
-- Projects inactive for 30+ days
+- 包含最终交付成果的已完成项目
+- 记录经验教训的已取消项目
+- 非活跃超过30天的项目
 
-### From Areas
+### 来自领域
 
-- Areas no longer relevant to your life
-- Responsibilities you've handed off
-- Roles you no longer have
+- 不再与你的生活相关的领域
+- 你已移交的职责
+- 你不再担任的角色
 
-### From Resources
+### 来自资源
 
-- Outdated information (but historically interesting)
-- Superseded frameworks or methods
-- Old versions of evolved ideas
+- 过时的信息(但具有历史趣味)
+- 被取代的框架或方法
+- 已演化思想的旧版本
 
-### From Inbox
+### 来自收件箱
 
-- Processed items no longer needed
-- Old daily notes (after extraction)
-- Random captures without lasting value
+- 已处理但不再需要的项目
+- 旧的每日笔记(提取后)
+- 没有持久价值的随机记录
 
-## Organization
+## 组织结构
 
 ```
-04_Archive/
-├── Projects_2024/     # Completed projects by year
-├── Projects_2023/
-├── Old_Areas/        # Discontinued areas
-├── Daily_Notes/      # Old daily captures
-├── Ideas/           # Ideas that didn't develop
-└── Miscellaneous/   # Everything else
+04_归档/
+├── 项目_2024/        # 按年份分类的已完成项目
+├── 项目_2023/
+├── 旧领域/           # 已停止的领域
+├── 每日笔记/         # 旧的每日记录
+├── 想法/             # 未发展的想法
+└── 杂项/             # 其他所有内容
 ```
 
-## Archival Process
+## 归档流程
 
-### Before Archiving Projects
+### 归档项目之前
 
-1. Create completion summary
-2. Extract reusable insights to Resources
-3. Document lessons learned
-4. Update any related Areas
-5. Move entire folder with structure intact
+1. 创建完成总结
+2. 提取可复用的见解到资源
+3. 记录经验教训
+4. 更新任何相关领域
+5. 保持结构完整地移动整个文件夹
 
-### Sample Completion Summary
+### 完成总结示例
 
 ```markdown
-# Project: [Name] - Completion Summary
+# 项目: [名称] - 完成总结
 
-**Duration**: Start date - End date **Status**: Completed/Cancelled/Suspended
+**持续时间**: 开始日期 - 结束日期
+**状态**: 已完成/已取消/已暂停
 
-## Objectives
+## 目标
 
-- Original goal 1 ✓
-- Original goal 2 ✓
-- Original goal 3 ✗
+- 原始目标 1 ✓
+- 原始目标 2 ✓
+- 原始目标 3 ✗
 
-## Key Outcomes
+## 关键成果
 
-- What was delivered
-- What impact it had
-- What value was created
+- 交付了什么
+- 产生了什么影响
+- 创造了什么价值
 
-## Lessons Learned
+## 经验教训
 
-- What worked well
-- What didn't work
-- What to do differently
+- 什么做得好
+- 什么没做好
+- 下次要如何改进
 
-## Reusable Assets
+## 可复用资产
 
-- Templates created: [[link]]
-- Processes developed: [[link]]
-- Insights gained: [[link]]
+- 创建的模板: [[链接]]
+- 开发的流程: [[链接]]
+- 获得的见解: [[链接]]
 
-## Related Notes
+## 相关笔记
 
-- Continues in: [[Area name]]
-- See also: [[Related project]]
+- 延续于: [[领域名称]]
+- 另见: [[相关项目]]
 ```
 
-## Claude Code Workflows
+## Claude Code 工作流
 
-### Archive Project
-
-```
-Help me archive [project name].
-Create a completion summary.
-Extract reusable insights to Resources.
-Move everything to Archive.
-```
-
-### Search Archive
+### 归档项目
 
 ```
-Search the archive for anything about [topic].
-I need historical context.
+帮我归档 [项目名称]。
+创建一个完成总结。
+提取可复用的见解到资源。
+将所有内容移动到归档。
 ```
 
-### Year in Review
+### 搜索归档
 
 ```
-Review all archived projects from [year].
-What patterns do you see?
-What did I accomplish?
+在归档中搜索关于 [主题] 的任何内容。
+我需要历史背景。
 ```
 
-### Resurrect Project
+### 年度回顾
 
 ```
-I want to revive [archived project].
-What was the status when archived?
-What would need updating?
+回顾 [年份] 的所有已归档项目。
+你看到了什么模式?
+我完成了什么?
 ```
 
-## Archive Philosophy
-
-### It's Not a Graveyard
-
-- Archives preserve institutional memory
-- Old projects inform new ones
-- Patterns emerge over time
-- Ideas can be resurrected
-
-### It's Not a Dumping Ground
-
-- Archive thoughtfully
-- Maintain some organization
-- Keep summaries accessible
-- Delete true junk
-
-## Claude Code Prompts
-
-### Historical Analysis
+### 恢复项目
 
 ```
-Look at my archived projects.
-What types of things do I tend to start but not finish?
-What themes recur?
+我想恢复 [已归档项目]。
+归档时的状态是什么?
+需要更新什么?
 ```
 
-### Knowledge Mining
+## 归档哲学
+
+### 它不是墓地
+
+- 归档保存组织记忆
+- 旧项目启发新项目
+- 模式随时间浮现
+- 想法可以复活
+
+### 它不是垃圾场
+
+- 有思考地归档
+- 保持一定的组织性
+- 保持总结的可访问性
+- 删除真正的垃圾
+
+## Claude Code 提示
+
+### 历史分析
 
 ```
-Search the archive for any mentions of [concept].
-How has my thinking evolved?
+查看我的已归档项目。
+我倾向于开始但没有完成什么类型的事情?
+什么主题反复出现?
 ```
 
-### Pattern Recognition
+### 知识挖掘
 
 ```
-Analyze my project completion rate.
-What factors correlate with success?
-What patterns predict failure?
+在归档中搜索任何提到 [概念] 的内容。
+我的思维是如何演变的?
 ```
 
-## Maintenance
+### 模式识别
 
-### Quarterly
+```
+分析我的项目完成率。
+什么因素与成功相关?
+什么模式预示失败?
+```
 
-- Review recent additions
-- Ensure summaries exist
-- Check for resurrection candidates
+## 维护
 
-### Annually
+### 每季度
 
-- Major archive cleanup
-- Delete what's truly dead
-- Extract any missed insights
-- Reorganize if needed
+- 回顾最近的添加
+- 确保总结存在
+- 检查可复活的候选项目
 
-## Tips
+### 每年
 
-- **Date everything** - Future you will thank you
-- **Summarize always** - Context fades quickly
-- **Link liberally** - Connections survive archival
-- **Search often** - Archives are meant to be used
-- **Delete fearlessly** - Not everything needs keeping
+- 重大归档清理
+- 删除真正没用的内容
+- 提取任何遗漏的见解
+- 根据需要重新组织
 
-## Remember
+## 技巧
 
-The Archive is your institutional memory. It's not about holding onto
-everything, but about preserving what might inform future work. Use Claude Code
-to help you see patterns across time and extract wisdom from experience.
+- **给所有内容标注日期** - 未来的你会感谢你
+- **总是进行总结** - 背景消退得很快
+- **自由地链接** - 连接可以在归档后存活
+- **经常搜索** - 归档是用来使用的
+- **无畏地删除** - 不是所有东西都需要保留
+
+## 记住
+
+归档是你的组织记忆。它不是关于保留所有东西,而是关于保存可能启发未来工作的内容。使用 Claude Code 帮助你看到跨时间的模式,并从经验中提取智慧。

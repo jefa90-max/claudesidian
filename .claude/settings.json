@@ -18,12 +18,15 @@
       {
         "hooks": [
           {
+            "type": "command",
             "command": "${CLAUDE_PROJECT_DIR}/.claude/hooks/skill-discovery.sh",
-            "timeout": 5000,
-            "type": "command"
+            "timeout": 5000
           }
         ]
       }
     ]
+  },
+  "enabledPlugins": {
+    "obsidian@obsidian-skills": true
   }
 }

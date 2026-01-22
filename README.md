@@ -88,16 +88,16 @@ Or use one of the pre-configured commands (in Claude Code):
 
 ```
 claudesidian/
-├── 00_Inbox/           # Temporary capture point for new ideas
-├── 01_Projects/        # Active, time-bound initiatives
-├── 02_Areas/           # Ongoing responsibilities
-├── 03_Resources/       # Reference materials and knowledge base
-├── 04_Archive/         # Completed projects and inactive items
-├── 05_Attachments/     # Images, PDFs, and other files
-├── 06_Metadata/        # Vault configuration and templates
-│   ├── Reference/      # Documentation and guides
-│   └── Templates/      # Reusable note templates
-└── .scripts/           # Helper scripts for automation
+├── 00_收件箱/           # 临时捕获新想法的地方
+├── 01_项目/            # 活跃的、有时限的计划
+├── 02_领域/            # 持续进行的责任
+├── 03_资源/            # 参考资料和知识库
+├── 04_归档/            # 已完成的项目和非活跃项目
+├── 05_附件/            # 图片、PDF 和其他文件
+├── 06_元数据/          # Vault 配置和模板
+│   ├── 参考/           # 文档和指南
+│   └── 模板/           # 可重用的笔记模板
+└── .scripts/           # 自动化辅助脚本
 ```
 
 ## Key Concepts
@@ -119,25 +119,25 @@ claudesidian/
 
 ### The PARA Method
 
-**Projects**: Have a deadline and specific outcome
+**项目 (Projects)**: 有截止日期和明确成果
 
-- Example: "Q4 2025 Marketing Strategy"
-- Create a folder in `01_Projects/`
+- 例如："2025年Q4营销策略"
+- 在 `01_项目/` 中创建文件夹
 
-**Areas**: Ongoing without an end date
+**领域 (Areas)**: 持续进行，没有结束日期
 
-- Example: "Health", "Finances", "Team Management"
-- Lives in `02_Areas/`
+- 例如："健康"、"财务"、"团队管理"
+- 存放在 `02_领域/`
 
-**Resources**: Topics of ongoing interest
+**资源 (Resources)**: 持续关注的主题
 
-- Example: "AI Research", "Writing Tips"
-- Store in `03_Resources/`
+- 例如："AI 研究"、"写作技巧"
+- 存储在 `03_资源/`
 
-**Archive**: Inactive items
+**归档 (Archive)**: 非活跃项目
 
-- Completed projects with their outputs
-- Old notes no longer relevant
+- 已完成的项目及其成果
+- 不再相关的旧笔记
 
 ## Claude Code Commands
 
@@ -182,7 +182,7 @@ customizations:
 - Shows you diffs for each file before updating
 - Preserves your personal notes and customizations
 - Only updates system files (commands, agents, scripts)
-- Never touches your content folders (00_Inbox, 01_Projects, etc.)
+- 永远不会触碰你的内容文件夹（00_收件箱、01_项目 等）
 - Provides rollback capability if needed
 
 **Safety features:**
@@ -238,11 +238,11 @@ research projects, documentation archives, or building a knowledge base.
 **Example workflow:**
 
 ```bash
-# Save a single article
-npm run firecrawl:scrape -- "https://example.com/article" "03_Resources/Articles"
+# 保存单篇文章
+npm run firecrawl:scrape -- "https://example.com/article" "03_资源/文章"
 
-# Batch save multiple URLs
-npm run firecrawl:batch -- urls.txt "03_Resources/Research"
+# 批量保存多个 URL
+npm run firecrawl:batch -- urls.txt "03_资源/研究"
 ```
 
 **Getting a Firecrawl API key:**
@@ -323,7 +323,7 @@ Best practices:
 
 Create specialized commands by saving instructions in `.claude/commands/`:
 
-**Research Assistant** (`06_Metadata/Agents/research-assistant.md`):
+**研究助手** (`06_元数据/代理/research-assistant.md`):
 
 ```markdown
 You are a research assistant.

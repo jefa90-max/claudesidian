@@ -1,0 +1,26 @@
+{
+  "id": "conv-1769065713775-ice0vjo84",
+  "title": "生成项目日报模板",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769065713775,
+  "updatedAt": 1769065904547,
+  "lastResponseAt": 1769065792448,
+  "sessionId": "6a944ee7-72f9-412d-a2ad-244e81141f46",
+  "sdkSessionId": "6a944ee7-72f9-412d-a2ad-244e81141f46",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 8,
+    "cacheCreationInputTokens": 579,
+    "cacheReadInputTokens": 57766,
+    "contextWindow": 200000,
+    "contextTokens": 58353,
+    "percentage": 29
+  },
+  "toolDiffData": {
+    "toolu_01AFq56EhwqYfeawjsZ4wyKL": {
+      "filePath": "D:\\Obsidian\\Qiao-WorkOS\\my-vault\\06_元数据\\Templates\\项目日报模板.md",
+      "originalContent": "",
+      "newContent": "# <% tp.date.now(\"YYYY-MM-DD\") %> 项目日报\n\n**项目**: [[]]\n**日期**: <% tp.date.now(\"YYYY-MM-DD dddd\") %>\n\n---\n\n## ✅ 今日完成\n<!-- 具体完成了什么？尽量量化 -->\n- [ ]\n- [ ]\n\n## 🚧 遇到的问题\n<!-- 阻塞点、待确认事项、需要协助的地方 -->\n-\n\n## 📋 明日计划\n<!-- 明天最重要的1-3件事 -->\n- [ ]\n- [ ]\n\n## 💡 备注\n<!-- 可选：想法、风险、依赖等 -->\n\n---\ntags: #日报 #项目日报\n"
+    }
+  }
+}

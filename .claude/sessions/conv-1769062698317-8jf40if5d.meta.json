@@ -1,0 +1,30 @@
+{
+  "id": "conv-1769062698317-8jf40if5d",
+  "title": "翻译文本为中文并替换原文",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769062698317,
+  "updatedAt": 1769063093216,
+  "lastResponseAt": 1769062777096,
+  "sessionId": "0ded22ed-da99-4957-9e1f-c1d597fff475",
+  "sdkSessionId": "0ded22ed-da99-4957-9e1f-c1d597fff475",
+  "currentNote": "06_元数据/Templates/Research Note Template.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 13,
+    "cacheCreationInputTokens": 842,
+    "cacheReadInputTokens": 55727,
+    "contextWindow": 200000,
+    "contextTokens": 56582,
+    "percentage": 28
+  },
+  "toolDiffData": {
+    "toolu_01511wVDTD6rtLMUj7b5KBQu": {
+      "filePath": "06_元数据/Templates/Research Note Template.md",
+      "originalContent": "# {{title}}\n\n**Source**: [URL or reference]\n**Date**: {{date}}\n**Tags**: #research\n\n## Summary\n<!-- Key points in 2-3 sentences -->\n\n## Key Insights\n- \n- \n- \n\n## Notable Quotes\n> \n\n## Questions Raised\n- \n- \n\n## Connections\n<!-- How does this relate to other notes? -->\n- See: [[related note]]\n- Contradicts: [[other perspective]]\n- Builds on: [[foundation concept]]\n\n## Action Items\n- [ ] \n\n---\n*For synthesis: \"Review all research notes in [folder] and identify patterns\"*",
+      "newContent": "# {{title}}\n\n**来源**: [URL 或参考资料]\n**日期**: {{date}}\n**标签**: #研究\n\n## 摘要\n<!-- 用 2-3 句话概括关键点 -->\n\n## 核心洞察\n-\n-\n-\n\n## 值得注意的引用\n>\n\n## 提出的问题\n-\n-\n\n## 关联\n<!-- 这与其他笔记有何关联？ -->\n- 参见：[[相关笔记]]\n- 矛盾于：[[其他观点]]\n- 基于：[[基础概念]]\n\n## 行动项\n- [ ]\n\n---\n*用于综合分析：\"查看[文件夹]中的所有研究笔记并识别模式\"*\n"
+    }
+  },
+  "displayContentMap": {
+    "_current_note__06_____Templates_Research_Note_Temp_106_3694469182": "请帮我翻译成中文，并替换原文"
+  }
+}

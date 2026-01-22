@@ -1,0 +1,30 @@
+{
+  "id": "conv-1769065930398-hi67x640f",
+  "title": "生成每日复盘日志模板",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769065930398,
+  "updatedAt": 1769065982731,
+  "lastResponseAt": 1769065982731,
+  "sessionId": "c9967dc7-4394-4727-a191-6d5b9758455e",
+  "sdkSessionId": "c9967dc7-4394-4727-a191-6d5b9758455e",
+  "currentNote": "06_元数据/Templates/项目日报模板.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 8,
+    "cacheCreationInputTokens": 750,
+    "cacheReadInputTokens": 56181,
+    "contextWindow": 200000,
+    "contextTokens": 56939,
+    "percentage": 28
+  },
+  "toolDiffData": {
+    "toolu_01K5xKJZSEHHHtaVBcAkDhiT": {
+      "filePath": "D:\\Obsidian\\Qiao-WorkOS\\my-vault\\06_元数据\\Templates\\每日复盘模板.md",
+      "originalContent": "",
+      "newContent": "---\ndate: <% tp.date.now(\"YYYY-MM-DD\") %>\ntags: [日志, 复盘]\n---\n\n# <% tp.date.now(\"YYYY-MM-DD dddd\") %>\n\n## ✅ 今日完成\n<!-- 做了什么？完成了什么？ -->\n-\n\n## 📚 今日收获\n<!-- 学到了什么？有什么新认知？ -->\n-\n\n## 🔥 明日重点\n<!-- 明天最重要的 1-3 件事 -->\n- [ ]\n\n## 💭 随记\n<!-- 可选：想法、情绪、灵感、需要跟进的事 -->\n\n"
+    }
+  },
+  "displayContentMap": {
+    "_current_note__06_____Templates________md___curren_114_716222033": "请帮我生成一个每日日志模板，便于我每天复盘，不要太复杂，但是不要丢失关键信息"
+  }
+}

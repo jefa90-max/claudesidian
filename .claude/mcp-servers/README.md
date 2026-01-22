@@ -55,32 +55,32 @@ Once configured, these commands become available in Claude Code:
 
 ### Usage Examples
 
-**Analyze Screenshot**
+**分析截图**
 
 ```
-Analyze the image at 05_Attachments/screenshot.png
-and tell me what it contains.
+分析 05_附件/screenshot.png 中的图片
+并告诉我它包含什么内容。
 ```
 
-**Process Multiple Images**
+**处理多张图片**
 
 ```
-Compare all images in 05_Attachments/Organized/
-and identify common themes.
+比较 05_附件/已整理/ 中的所有图片
+并识别共同主题。
 ```
 
-**Extract Text**
+**提取文本**
 
 ```
-Extract all text from the PDF at
-05_Attachments/document.pdf
+从 05_附件/document.pdf 中
+提取所有文本。
 ```
 
-**Rename Images**
+**重命名图片**
 
 ```
-Suggest better names for all images
-in 05_Attachments/ based on their content.
+根据内容为 05_附件/ 中的所有图片
+建议更好的名称。
 ```
 
 ### Troubleshooting

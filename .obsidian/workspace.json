@@ -186,7 +186,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -202,17 +202,57 @@
       "command-palette:打开命令面板": false,
       "bases:新建数据库": false,
       "claudian:Open Claudian": false,
-      "obsidian-git:Open Git source control": false
+      "obsidian-git:Open Git source control": false,
+      "templater-obsidian:Templater": false
     }
   },
   "active": "a7868683e0300171",
   "lastOpenFiles": [
-    "06_元数据/Templates/Project Template.md",
-    "06_元数据/Templates/Daily Note Template.md",
+    "Untitled.md",
     "00_收件箱/README.md",
-    "未命名.md",
+    "06_元数据/参考/Claude Code 常用提示词.md",
+    "06_元数据/模板/每日复盘模板.md",
+    "06_元数据/模板/会议纪要模板.md",
+    "06_元数据/模板/项目模板.md",
+    "06_元数据/模板/项目日报模板.md",
+    "06_元数据/模板/研究笔记模板.md",
+    "06_元数据/Templates/日志模板.md",
+    "02_领域/儿童英语/庆爸学习路线.md",
+    "06_元数据/Templates/项目上报模板.md",
+    "01_项目/README.md",
+    "01_项目/00_政府项目_景泰乡村治理平台/README.md",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/数治乡村-管理端-需求确认文档.md",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/video-monitor.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/united-structure.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/shipinzhenghe.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/popup.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/map3.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/map2.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/map1.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/key-personnel1.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/key-personnel.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/grid-panel.png",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/service",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/overview",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/livable",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/cultural-tourism",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/agri-tourism",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/manager/snapshot",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/manager/services/training",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/manager/services/household",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/manager/services/attendance",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/数治乡村-农户端-需求确认文档.md",
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/乡村治理一张图-需求确认文档.md",
     "02_领域/README.md",
-    "00_收件箱/Welcome.md",
-    "README.md"
+    "04_归档/README.md",
+    "03_资源/README.md",
+    "00_收件箱/未命名.md",
+    "06_元数据/README.md",
+    "01_项目/00政府项目-景泰乡村治理平台/README.md",
+    "05_附件/README.md",
+    "05_附件/README.zh-CN.md",
+    "02_领域/AI编程/Reddit 从 0 到 1 入门指南.md",
+    "02_领域/AI编程/看榜单与分析竞品.md"
   ]
 }

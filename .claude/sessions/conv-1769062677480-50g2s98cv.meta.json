@@ -1,0 +1,30 @@
+{
+  "id": "conv-1769062677480-50g2s98cv",
+  "title": "我看到您的请求，但需要更多信息。您要翻译什么内容成中文并替换原文？请提供：\n\n1. **要翻译...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769062677480,
+  "updatedAt": 1769063092007,
+  "lastResponseAt": 1769062735922,
+  "sessionId": "99396d9f-2e42-4f4a-8790-5a97ad74013c",
+  "sdkSessionId": "99396d9f-2e42-4f4a-8790-5a97ad74013c",
+  "currentNote": "06_元数据/Templates/Project Template.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 13,
+    "cacheCreationInputTokens": 1304,
+    "cacheReadInputTokens": 55767,
+    "contextWindow": 200000,
+    "contextTokens": 57084,
+    "percentage": 29
+  },
+  "toolDiffData": {
+    "toolu_01WX5Y1iCUNRNh4R1YsJSY4K": {
+      "filePath": "06_元数据/Templates/Project Template.md",
+      "originalContent": "# {{title}}\n\n## Project Overview\n**Start Date**: {{date}}\n**Target Completion**: \n**Status**: Active\n\n## Objectives\n- [ ] \n- [ ] \n- [ ] \n\n## Context\n<!-- Why this project? What problem does it solve? -->\n\n## Success Criteria\n<!-- How will we know this is complete? -->\n\n## Key Resources\n<!-- Links to relevant notes, documents, people -->\n\n## Progress Log\n<!-- Claude Code will help maintain this -->\n\n### {{date}} - Project Initiated\n- Set up project structure\n- Initial research phase\n\n## Open Questions\n<!-- Track what we need to figure out -->\n- \n- \n\n## Next Actions\n<!-- Immediate next steps -->\n- [ ] \n- [ ] \n\n---\n*Using Claude Code? Say: \"I'm working on {{title}} in thinking mode. Let's explore.\"*",
+      "newContent": "# {{title}}\n\n## 项目概述\n**开始日期**: {{date}}\n**目标完成日期**:\n**状态**: 进行中\n\n## 目标\n- [ ]\n- [ ]\n- [ ]\n\n## 背景\n<!-- 为什么要做这个项目？它解决什么问题？ -->\n\n## 成功标准\n<!-- 我们如何知道项目完成了？ -->\n\n## 关键资源\n<!-- 相关笔记、文档、人员的链接 -->\n\n## 进度日志\n<!-- Claude Code 会帮助维护这个 -->\n\n### {{date}} - 项目启动\n- 建立项目结构\n- 初步调研阶段\n\n## 待解决问题\n<!-- 记录我们需要弄清楚的事情 -->\n-\n-\n\n## 下一步行动\n<!-- 即将要做的步骤 -->\n- [ ]\n- [ ]\n\n---\n*使用 Claude Code？说：\"我正在思考模式下处理 {{title}}。我们一起探索吧。\"*\n"
+    }
+  },
+  "displayContentMap": {
+    "_current_note__06_____Templates_Project_Template_m_100_3428021660": "请帮我翻译成中文，并替换原文"
+  }
+}
