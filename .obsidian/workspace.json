@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_领域/README.md",
+                "file": "00_收件箱/README.md",
                 "mode": "source",
                 "source": false
               },
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "02_领域/README.md",
+                "file": "00_收件箱/README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -113,7 +113,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "02_领域/README.md",
+                "file": "00_收件箱/README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
@@ -156,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "02_领域/README.md",
+                "file": "00_收件箱/README.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -207,7 +207,11 @@
   },
   "active": "a7868683e0300171",
   "lastOpenFiles": [
+    "06_元数据/Templates/Project Template.md",
+    "06_元数据/Templates/Daily Note Template.md",
     "00_收件箱/README.md",
+    "未命名.md",
+    "02_领域/README.md",
     "00_收件箱/Welcome.md",
     "README.md"
   ]
