@@ -3,11 +3,11 @@
   "title": "生成每日复盘日志模板",
   "titleGenerationStatus": "success",
   "createdAt": 1769065930398,
-  "updatedAt": 1769065982731,
+  "updatedAt": 1769068950772,
   "lastResponseAt": 1769065982731,
   "sessionId": "c9967dc7-4394-4727-a191-6d5b9758455e",
   "sdkSessionId": "c9967dc7-4394-4727-a191-6d5b9758455e",
-  "currentNote": "06_元数据/Templates/项目日报模板.md",
+  "currentNote": "06_元数据/模板/项目日报模板.md",
   "usage": {
     "model": "opus",
     "inputTokens": 8,

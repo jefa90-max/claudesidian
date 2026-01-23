@@ -3,11 +3,11 @@
   "title": "用中文替换英文原文",
   "titleGenerationStatus": "success",
   "createdAt": 1769065977603,
-  "updatedAt": 1769066052658,
+  "updatedAt": 1769068949897,
   "lastResponseAt": 1769066052658,
   "sessionId": "9ca996a8-264d-4e08-863a-f024ced826cd",
   "sdkSessionId": "9ca996a8-264d-4e08-863a-f024ced826cd",
-  "currentNote": "06_元数据/Reference/Common Claude Code Prompts.md",
+  "currentNote": "06_元数据/参考/Claude Code 常用提示词.md",
   "usage": {
     "model": "opus",
     "inputTokens": 8,

@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_收件箱/README.md",
+                "file": "01_项目/01_副业项目_油管英语网站/每日进展/2026-01-22.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "README"
+              "title": "2026-01-22"
             }
           }
         ]
@@ -94,7 +94,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "00_收件箱/README.md",
+                "file": "01_项目/01_副业项目_油管英语网站/每日进展/2026-01-22.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -104,7 +104,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "README 的反向链接列表"
+              "title": "2026-01-22 的反向链接列表"
             }
           },
           {
@@ -113,12 +113,12 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "00_收件箱/README.md",
+                "file": "01_项目/01_副业项目_油管英语网站/每日进展/2026-01-22.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "README 的出链列表"
+              "title": "2026-01-22 的出链列表"
             }
           },
           {
@@ -156,13 +156,13 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "00_收件箱/README.md",
+                "file": "01_项目/01_副业项目_油管英语网站/每日进展/2026-01-22.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "README 的大纲"
+              "title": "2026-01-22 的大纲"
             }
           },
           {
@@ -208,20 +208,42 @@
   },
   "active": "a7868683e0300171",
   "lastOpenFiles": [
-    "Untitled.md",
+    "01_项目/00_政府项目_景泰项目综合管理/每日进展/2026-01-22.md",
     "00_收件箱/README.md",
-    "06_元数据/参考/Claude Code 常用提示词.md",
-    "06_元数据/模板/每日复盘模板.md",
-    "06_元数据/模板/会议纪要模板.md",
+    "02_领域/AI编程/Obsidian + Claude Code 知识库搭建学习笔记.md",
+    "01_项目/01_副业项目_油管英语网站/每日进展/2026-01-22.md",
+    "00_收件箱/每日复盘2026-01-22.md",
     "06_元数据/模板/项目模板.md",
     "06_元数据/模板/项目日报模板.md",
-    "06_元数据/模板/研究笔记模板.md",
-    "06_元数据/Templates/日志模板.md",
-    "02_领域/儿童英语/庆爸学习路线.md",
-    "06_元数据/Templates/项目上报模板.md",
+    "01_项目/01_副业项目_油管英语网站/研究/完整需求.md",
+    "01_项目/01_副业项目_油管英语网站/README.md",
+    "01_项目/01_副业项目_油管英语网站/研究/未命名",
+    "01_项目/00_政府项目_景泰项目综合管理/README.md",
+    "01_项目/00_政府项目_景泰项目综合管理/资源",
+    "01_项目/00_政府项目_景泰项目综合管理/草稿",
+    "01_项目/00_政府项目_景泰项目综合管理/研究",
+    "01_项目/00_政府项目_景泰项目综合管理/每日进展",
+    "01_项目/00_政府项目_景泰项目综合管理/产出",
+    "01_项目/00_政府项目_景泰项目综合管理",
+    "06_元数据/模板/每日复盘模板.md",
+    "01_项目/01_副业项目_油管英语网站/产出",
+    "01_项目/01_副业项目_油管英语网站/资源",
+    "01_项目/01_副业项目_油管英语网站/草稿",
     "01_项目/README.md",
-    "01_项目/00_政府项目_景泰乡村治理平台/README.md",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/数治乡村-管理端-需求确认文档.md",
+    "00_收件箱/未命名.md",
+    "02_领域/投资理财/从零到一学投资/第12节 投资的导航仪--周期(上).md",
+    "02_领域/投资理财/从零到一学投资/第11节 如何构建基金组合.md",
+    "02_领域/投资理财/从零到一学投资/第10节 黄金如何投资？如何搭配股债比例？.md",
+    "02_领域/投资理财/从零到一学投资/第9节 资产配置有什么好处？大类资产规律？.md",
+    "02_领域/投资理财/从零到一学投资/第8节 招式策略--定投.md",
+    "02_领域/投资理财/从零到一学投资/第7节 投资市场的五种轮动关系以及投资流派.md",
+    "02_领域/投资理财/从零到一学投资/第6节 看懂市场的投资规律.md",
+    "02_领域/投资理财/从零到一学投资/第5节 投资心态修炼.md",
+    "02_领域/投资理财/从零到一学投资/第4节 可转债投资.md",
+    "02_领域/投资理财/从零到一学投资/第3节 现金类理财、债券投资.md",
+    "CHANGELOG.md",
+    "CLAUDE-BOOTSTRAP.md",
+    "CONTRIBUTING.md",
     "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/video-monitor.png",
     "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/united-structure.png",
     "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/shipinzhenghe.png",
@@ -231,28 +253,6 @@
     "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/map1.png",
     "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/key-personnel1.png",
     "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/key-personnel.png",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/grid-panel.png",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/service",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/overview",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/livable",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/cultural-tourism",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/agri-tourism",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/manager/snapshot",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/manager/services/training",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/manager/services/household",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/manager/services/attendance",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/数治乡村-农户端-需求确认文档.md",
-    "01_项目/00_政府项目_景泰乡村治理平台/研究/乡村治理一张图-需求确认文档.md",
-    "02_领域/README.md",
-    "04_归档/README.md",
-    "03_资源/README.md",
-    "00_收件箱/未命名.md",
-    "06_元数据/README.md",
-    "01_项目/00政府项目-景泰乡村治理平台/README.md",
-    "05_附件/README.md",
-    "05_附件/README.zh-CN.md",
-    "02_领域/AI编程/Reddit 从 0 到 1 入门指南.md",
-    "02_领域/AI编程/看榜单与分析竞品.md"
+    "01_项目/00_政府项目_景泰乡村治理平台/研究/screenshots/united/grid-panel.png"
   ]
 }
