@@ -1,0 +1,30 @@
+{
+  "id": "conv-1769147236100-fl6ye6z2p",
+  "title": "I need to see the file you want me to translate...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769147236102,
+  "updatedAt": 1769147286332,
+  "lastResponseAt": 1769147286332,
+  "sessionId": "f8f7f5e9-2b87-4b67-8ac2-b49623d3b4c5",
+  "sdkSessionId": "f8f7f5e9-2b87-4b67-8ac2-b49623d3b4c5",
+  "currentNote": "02_领域/AI编程/chatgpt提示词.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 8,
+    "cacheCreationInputTokens": 587,
+    "cacheReadInputTokens": 55483,
+    "contextWindow": 200000,
+    "contextTokens": 56078,
+    "percentage": 28
+  },
+  "toolDiffData": {
+    "toolu_01QN3SXQiW8j3FkAwwNgY194": {
+      "filePath": "02_领域/AI编程/chatgpt提示词.md",
+      "originalContent": "\n# Review system design doc\nI’ve drafted a technical design document for [insert project or feature]. Review it for clarity, architectural soundness, and completeness. Highlight any missing considerations or questions reviewers may raise.\n\n",
+      "newContent": "\n# 审查系统设计文档\n我为[插入项目或功能名称]起草了一份技术设计文档。请从清晰度、架构合理性和完整性方面进行审查。指出任何遗漏的考虑因素或审查者可能提出的问题。\n\n"
+    }
+  },
+  "displayContentMap": {
+    "_current_note__02____AI___chatgpt____md___current__89_151613987": "把这个文件翻译成中文，替换原文"
+  }
+}

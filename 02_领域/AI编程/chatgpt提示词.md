@@ -1,4 +1,4 @@
 
-# Review system design doc
-I’ve drafted a technical design document for [insert project or feature]. Review it for clarity, architectural soundness, and completeness. Highlight any missing considerations or questions reviewers may raise.
+# 审查系统设计文档
+我为[插入项目或功能名称]起草了一份技术设计文档。请从清晰度、架构合理性和完整性方面进行审查。指出任何遗漏的考虑因素或审查者可能提出的问题。
 
