@@ -1,0 +1,9 @@
+/* Obsidian 全局字体：中文优先，英文也好看 */
+body, .markdown-source-view, .markdown-preview-view {
+  font-family: "仓耳今楷02 W04","Microsoft YaHei", "Source Han Sans SC", "Noto Sans SC", "PingFang SC", "SimSun", sans-serif !important;
+}
+
+/* 代码区不建议用中文字体，保持等宽 */
+code, pre, .cm-s-obsidian span {
+  font-family: "JetBrains Mono", Consolas, monospace !important;
+}

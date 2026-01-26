@@ -1,1 +1,9 @@
-{}
+{
+  "cssTheme": "Things",
+  "monospaceFontFamily": "Cascadia Mono",
+  "baseFontSize": 16,
+  "interfaceFontFamily": "仓耳今楷",
+  "enabledCssSnippets": [
+    "chinese-font"
+  ]
+}
