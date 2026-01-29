@@ -1,0 +1,30 @@
+{
+  "id": "conv-1769648426156-4cypvxzoz",
+  "title": "创建油管英语项目日报并更新完成事项",
+  "titleGenerationStatus": "success",
+  "createdAt": 1769648426156,
+  "updatedAt": 1769648477920,
+  "lastResponseAt": 1769648444122,
+  "sessionId": "7997b6cd-ca28-4e8a-af05-9529dc882e72",
+  "sdkSessionId": "7997b6cd-ca28-4e8a-af05-9529dc882e72",
+  "currentNote": "01_项目/01_副业项目_油管英语网站/每日进展/2026-01-28.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 536,
+    "cacheReadInputTokens": 29391,
+    "contextWindow": 200000,
+    "contextTokens": 29928,
+    "percentage": 15
+  },
+  "toolDiffData": {
+    "toolu_0195WUYK18fi1cR2mJLSS8yx": {
+      "filePath": "D:\\Obsidian\\Qiao-WorkOS\\my-vault\\01_项目\\01_副业项目_油管英语网站\\每日进展\\2026-01-29.md",
+      "originalContent": "",
+      "newContent": "# 2026-01-29 项目日报\n\n**日期**: 2026-01-29 星期四\n\n---\n\n## ✅ 今日完成\n<!-- 具体完成了什么？尽量量化 -->\n- [ ] 修改移动端倍数和循环次数选择不了的问题，弹窗能出来，但是选不了选项\n- [ ] 测试移动端循环是否正确\n- [ ] 修改带角色标签字幕显示不好看的问题\n- [ ] 修改视频播放暂停时不显示进度条\n- [ ] 解决移动端网站老是自己刷新的问题\n- [ ] 修改情景英语所有字幕文件，结尾都延时50ms\n- [ ] 确认情景英语标题图片是否正确处理\n- [ ] 制作情景英语批量上传表\n\n## 🚧 遇到的问题\n<!-- 阻塞点、待确认事项、需要协助的地方 -->\n\n\n## 📋 明日计划\n<!-- 明天最重要的1-3件事 -->\n\n\n## 💡 备注\n<!-- 可选：想法、风险、依赖等 -->\n\n\n---\ntags: #日报 #项目日报\n"
+    }
+  },
+  "displayContentMap": {
+    "_current_note__01____01__________________2026_01_2_150_3670317829": "新建一个油管英语项目今天的日报，按照现在打开的文档格式，也放在这个位置 ，然后把1月28日的明日计划作为今日完成事项放进去"
+  }
+}
