@@ -25,12 +25,14 @@
             "id": "14c6cb0880c0dddd",
             "type": "leaf",
             "state": {
-              "type": "release-notes",
+              "type": "markdown",
               "state": {
-                "currentVersion": "1.11.7"
+                "file": "02_领域/AI编程/未命名.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-book-up",
-              "title": "版本说明 1.11.7"
+              "icon": "lucide-file",
+              "title": "未命名"
             }
           }
         ],
@@ -221,6 +223,8 @@
   },
   "active": "14c6cb0880c0dddd",
   "lastOpenFiles": [
+    "02_领域/AI编程/重要变量.md",
+    "02_领域/AI编程/未命名.md",
     "02_领域/AI编程/Orchestrate teams of Claude Code sessions.md",
     "02_领域/AI编程/Claude Code 智能体团队协作指南.md",
     "01_项目/01_副业项目_油管英语网站/每日进展/2026-02-03.md",
@@ -246,7 +250,6 @@
     "00_收件箱/2026-01-23复盘.md",
     "06_元数据/模板/会议纪要模板.md",
     "02_领域/AI编程/Pencil：设计和写代码，以后就全让AI干了.md",
-    "02_领域/AI编程/claude code批量运行skill.md",
     "02_领域/AI编程/chatgpt提示词.md.tmp.116876.1769147281409",
     "01_项目/01_副业项目_油管英语网站/研究/未命名",
     "01_项目/00_政府项目_景泰项目综合管理/资源",
