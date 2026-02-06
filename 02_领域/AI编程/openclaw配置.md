@@ -1,3 +1,4 @@
+# 1.更新openclaw
 - 更新到最新版本（不轮换 token，只保证 token 不再写在 unit 里）：
     
 
@@ -12,3 +13,7 @@
     
 
 `openclaw-update --no-secure-token`
+
+# 2.相关配置
+API_KEY=d54d860a2699b74a56e452f5c954e0e10d7adfb21024240e 给 openclaw 用
+WEB_PASSWORD=aRQvTMyzL96m20Q4WUppaH1BR4lZO3  给你网页登录管理后台用
