@@ -17,3 +17,5 @@
 # 2.相关配置
 API_KEY=d54d860a2699b74a56e452f5c954e0e10d7adfb21024240e 给 openclaw 用
 WEB_PASSWORD=aRQvTMyzL96m20Q4WUppaH1BR4lZO3  给你网页登录管理后台用
+
+反代API KEY=sk-a83b0814c5c040bdbe28f360a6e282bc
