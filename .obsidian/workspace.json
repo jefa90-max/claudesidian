@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clippings/【快速入门】你不需要会编程.md",
+                "file": "06_元数据/模板/每日工作一体化模板.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "【快速入门】你不需要会编程"
+              "title": "每日工作一体化模板"
             }
           }
         ],
@@ -201,7 +201,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -223,8 +223,9 @@
   },
   "active": "14c6cb0880c0dddd",
   "lastOpenFiles": [
-    "Clippings/【快速入门】认识你的新伙伴.md",
+    "06_元数据/模板/每日复盘模板.md",
     "Clippings/【快速入门】你不需要会编程.md",
+    "Clippings/【快速入门】认识你的新伙伴.md",
     "00_收件箱/2026-03-16.md",
     "00_收件箱/2026-03-13.md",
     "00_收件箱/README.md",
@@ -234,7 +235,6 @@
     "01_项目/01_副业项目_油管英语网站/每日进展/2026-02-03.md",
     "06_元数据/模板/每日工作计划模板.md",
     "02_领域/README.md",
-    "06_元数据/模板/每日复盘模板.md",
     "06_元数据/模板/会议纪要模板.md",
     "06_元数据/模板/研究笔记模板.md",
     "06_元数据/模板/项目日报模板.md",
