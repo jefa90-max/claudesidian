@@ -34,9 +34,21 @@
               "icon": "lucide-file",
               "title": "2026-03-20"
             }
+          },
+          {
+            "id": "19874d2f92087a0b",
+            "type": "leaf",
+            "state": {
+              "type": "release-notes",
+              "state": {
+                "currentVersion": "1.12.7"
+              },
+              "icon": "lucide-book-up",
+              "title": "版本说明 1.12.7"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -221,7 +233,7 @@
       "templater-obsidian:Templater": false
     }
   },
-  "active": "14c6cb0880c0dddd",
+  "active": "19874d2f92087a0b",
   "lastOpenFiles": [
     "00_收件箱/2026-03-19.md",
     "00_收件箱/2026-03-16.md",
