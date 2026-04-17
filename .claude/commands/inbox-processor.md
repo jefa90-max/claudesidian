@@ -1,54 +1,140 @@
-# Inbox Processor
+---
+description: '处理收件箱：扫描 → 提炼 → 分发 → 归档'
+argument-hint: '[文件名] 或留空处理全部'
+---
 
-Help organize and process items in the 00_Inbox folder according to the PARA
-method.
+# 收件箱处理器
 
-## Task
+按照「收件箱 → 提炼 → 分发 → 归档」流程，处理 `00_收件箱/` 中的日志和笔记。
 
-Review all notes in `00_Inbox/` and help categorize them:
+## 处理流程
 
-1. **Scan the Inbox**
-   - List all files currently in 00_Inbox
-   - Exclude README.md and Welcome.md
+### 第 1 步：扫描收件箱
 
-2. **Analyze Each Item**
-   - Read the content
-   - Identify the type of note
-   - Suggest appropriate destination
+1. 列出 `00_收件箱/` 中所有 `.md` 文件（排除 `README.md`）
+2. 如果用户指定了文件名（通过 `$ARGUMENTS`），只处理该文件
+3. 如果未指定，列出所有待处理文件，让用户确认处理范围
 
-3. **Categorization Rules**
-   - **→ 01_Projects**: Has deadline, specific outcome
-   - **→ 02_Areas**: Ongoing responsibility, no end date
-   - **→ 03_Resources**: Reference material, knowledge
-   - **→ 04_Archive**: Old/completed, no longer active
-   - **→ Delete**: No value, redundant, or temporary
+### 第 2 步：逐篇分析
 
-4. **Suggest Actions**
+读取每篇笔记，识别以下类型的内容：
 
-   ```
-   File: [filename]
-   Type: [detected type]
-   Destination: [suggested folder]
-   Reason: [why this categorization]
-   Related to: [any existing notes it connects to]
-   ```
+| 标记 | 类型 | 处理方式 |
+|------|------|---------|
+| ⭐ | **决策/转折** — 方向选择、战略判断、重要取舍 | 必须提炼为独立知识卡片 |
+| 📘 | **可复用经验** — 技术踩坑、方法论、流程优化 | 提炼到领域或资源 |
+| 📋 | **项目进展** — 具体任务完成、问题、里程碑 | 简要补记到对应项目文件夹 |
+| 📝 | **流水账** — 日常事务、已完成待办、过程记录 | 不提炼，跟随日志直接归档 |
+| 💡 | **模糊想法** — 还没想清楚的方向或灵感 | 留在收件箱，下次再看 |
 
-5. **Identify Patterns**
-   - Common themes across multiple notes
-   - Notes that could be combined
-   - Missing connections between items
+### 第 3 步：输出分析报告
 
-## Output Format
+对每篇笔记，输出结构化分析：
 
-Provide a clear action plan:
+```
+📄 文件：[文件名]
+📅 日期：[日期]
 
-1. Items to move (with destinations)
-2. Items to combine or link
-3. Items to delete
-4. Items needing more context
+提炼项：
+  ⭐ [内容摘要] → [目标位置]
+  📘 [内容摘要] → [目标位置]
+  📋 [内容摘要] → [目标项目文件夹]
+  📝 [流水账内容] → 跟随归档
+  💡 [模糊想法] → 留在收件箱
 
-## Remember
+建议动作：提炼 N 条 / 直接归档 / 保留
+```
 
-- Some items legitimately belong in the Inbox (daily notes, quick captures)
-- Don't over-organize - sometimes "good enough" is perfect
-- Look for opportunities to connect ideas, not just file them
+### 第 4 步：等待用户确认
+
+将分析报告展示给用户，等用户确认后再执行。用户可能：
+- 同意全部建议
+- 调整某些内容的去向
+- 跳过某些笔记
+
+### 第 5 步：执行提炼和分发
+
+用户确认后，按以下规则执行：
+
+#### 5a. 创建知识卡片（⭐ 和 📘 类型）
+
+用以下格式创建新笔记：
+
+```markdown
+---
+date: [提炼日期]
+source: "[[04_归档/日志/原始日志文件名]]"
+tags: [根据内容添加]
+---
+
+# [标题]
+
+## 背景
+[这个认知/决策/经验产生的场景]
+
+## 核心内容
+[具体的知识点、决策、方法论]
+
+## 为什么重要
+[对后续的影响和意义]
+
+## 相关链接
+- [[原始日志链接]]
+- [其他相关笔记]
+```
+
+#### 5b. 补记项目进展（📋 类型）
+
+在对应项目的执行推进文件夹中，追加简要记录或创建日期笔记。
+
+#### 5c. 归档原始日志
+
+1. 确保日志 frontmatter 中有 `processed: true`（如果没有则添加）
+2. 将日志文件移动到 `04_归档/日志/`
+
+### 第 6 步：输出处理报告
+
+```
+✅ 收件箱处理完成
+
+已提炼：
+  - [[新笔记1]] → 02_领域/副业经营/
+  - [[新笔记2]] → 02_领域/技术能力/
+
+已补记：
+  - 景泰项目进展 → 01_项目/00_政府项目_景泰项目/05-执行推进/
+
+已归档：
+  - 2026-03-13.md → 04_归档/日志/
+  - 2026-03-16.md → 04_归档/日志/
+
+仍在收件箱（💡 模糊想法）：
+  - [如有]
+```
+
+## 分发目标速查
+
+| 内容主题 | 目标位置 |
+|---------|---------|
+| 景泰/乡村治理项目 | `01_项目/00_政府项目_景泰项目/05-执行推进/` |
+| 油管英语网站 | `01_项目/01_副业项目_油管英语网站/每日进展/` |
+| 公众号垂直小号 | `01_项目/02_副业项目_公众号垂直小号/` |
+| 小红书店铺 | `01_项目/03_副业项目_小红书店铺/` |
+| X 账号增长 | `01_项目/04_副业项目_X账号增长/` |
+| 副业方向/战略思考 | `02_领域/副业经营/` |
+| 技术经验/踩坑 | `02_领域/技术能力/` |
+| 投资理财 | `02_领域/投资理财/` |
+| 儿童教育 | `02_领域/儿童教育/` |
+| AI 应用/提示词 | `03_资源/AI应用与提示词/` |
+| AI 编程教程 | `03_资源/AI编程教程/` |
+| 自媒体运营方法 | `03_资源/自媒体运营方法论/` |
+| 投资课程笔记 | `03_资源/投资课程笔记/` |
+
+## 注意事项
+
+- 用中文写所有内容
+- 知识卡片的 `source` 字段使用归档后的路径（`04_归档/日志/`）
+- 如果目标文件夹下缺少子文件夹，先创建再放入
+- 项目进展的补记要简洁，一两句话概括即可，不要复制大段原文
+- 遇到不确定的归属，宁可问用户，不要猜
+- 完整流程参考：`06_元数据/参考/收件箱处理流程.md`
