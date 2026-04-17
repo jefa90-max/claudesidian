@@ -1,0 +1,24 @@
+{
+  "id": "conv-1776395621609-cvszjlf9s",
+  "providerId": "claude",
+  "title": "Analyze inbox organization strategy",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776395621609,
+  "updatedAt": 1776395747607,
+  "lastResponseAt": 1776395747607,
+  "sessionId": "014609f4-522d-488e-a2c2-7f105a50a371",
+  "providerState": {
+    "providerSessionId": "014609f4-522d-488e-a2c2-7f105a50a371"
+  },
+  "currentNote": "00_收件箱/2026-01-23复盘.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 4407,
+    "cacheReadInputTokens": 35243,
+    "contextWindow": 200000,
+    "contextTokens": 39651,
+    "percentage": 20,
+    "contextWindowIsAuthoritative": true
+  }
+}
