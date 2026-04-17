@@ -4,8 +4,8 @@
   "title": "Process inbox items",
   "titleGenerationStatus": "success",
   "createdAt": 1776396390257,
-  "updatedAt": 1776396539819,
-  "lastResponseAt": 1776396539817,
+  "updatedAt": 1776397271838,
+  "lastResponseAt": 1776397271837,
   "sessionId": "a75469c0-c9c4-44b9-a67d-38bd19b049db",
   "providerState": {
     "providerSessionId": "a75469c0-c9c4-44b9-a67d-38bd19b049db"
@@ -14,11 +14,11 @@
   "usage": {
     "model": "opus",
     "inputTokens": 1,
-    "cacheCreationInputTokens": 998,
-    "cacheReadInputTokens": 37067,
+    "cacheCreationInputTokens": 303,
+    "cacheReadInputTokens": 54967,
     "contextWindow": 200000,
-    "contextTokens": 38066,
-    "percentage": 19,
+    "contextTokens": 55271,
+    "percentage": 28,
     "contextWindowIsAuthoritative": true
   }
 }
