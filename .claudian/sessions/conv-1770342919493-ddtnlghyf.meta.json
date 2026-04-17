@@ -1,0 +1,20 @@
+{
+  "id": "conv-1770342919493-ddtnlghyf",
+  "title": "**生成每日工作总结和明日计划文档**\n\n---\n\n## 审视与建议\n\n在生成文档之前，我想指...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1770342919493,
+  "updatedAt": 1776392115688,
+  "lastResponseAt": 1773909365052,
+  "sessionId": "a2b7953e-113a-4e68-864d-0eb348d463b0",
+  "sdkSessionId": "a2b7953e-113a-4e68-864d-0eb348d463b0",
+  "currentNote": "00_收件箱/2026-01-23复盘.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 8,
+    "cacheCreationInputTokens": 4611,
+    "cacheReadInputTokens": 33365,
+    "contextWindow": 200000,
+    "contextTokens": 37984,
+    "percentage": 19
+  }
+}

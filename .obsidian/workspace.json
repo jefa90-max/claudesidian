@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_领域/垂直小号/AI辅助协作定制你的垂直小号IP写作教练.md",
+                "file": "00_收件箱/2026-01-23复盘.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "AI辅助协作定制你的垂直小号IP写作教练"
+              "title": "2026-01-23复盘"
             }
           }
         ]
@@ -166,16 +166,6 @@
             }
           },
           {
-            "id": "bea78dc4f05c7fc1",
-            "type": "leaf",
-            "state": {
-              "type": "claudian-view",
-              "state": {},
-              "icon": "bot",
-              "title": "Claudian"
-            }
-          },
-          {
             "id": "51be3e36cc62915a",
             "type": "leaf",
             "state": {
@@ -183,6 +173,16 @@
               "state": {},
               "icon": "git-pull-request",
               "title": "Source Control"
+            }
+          },
+          {
+            "id": "a3843e33d45e850d",
+            "type": "leaf",
+            "state": {
+              "type": "claudian-view",
+              "state": {},
+              "icon": "bot",
+              "title": "Claudian"
             }
           }
         ],
@@ -203,14 +203,19 @@
       "bases:新建数据库": false,
       "claudian:Open Claudian": false,
       "obsidian-git:Open Git source control": false,
-      "templater-obsidian:Templater": false
+      "templater-obsidian:Templater": false,
+      "obsidian42-brat:BRAT": false
     }
   },
-  "active": "965204b3266dbe5d",
+  "active": "a3843e33d45e850d",
   "lastOpenFiles": [
-    "02_领域/垂直小号/选题实用指南.md",
-    "02_领域/垂直小号/AI辅助协作定制你的垂直小号IP写作教练.md",
+    "00_收件箱/2026-03-13.md",
+    "00_收件箱/2026-03-19.md",
+    "00_收件箱/2026-03-20.md",
+    "00_收件箱/2026-03-26.md",
     "00_收件箱/2026-03-30.md",
+    "02_领域/垂直小号/AI辅助协作定制你的垂直小号IP写作教练.md",
+    "02_领域/垂直小号/选题实用指南.md",
     "Clippings/【超级标16】企业AI学习与服务.md",
     "02_领域/AI编程/使用gstack开发实践.md",
     "02_领域/AI编程/Claude Code 智能体团队协作指南.md",
@@ -218,16 +223,12 @@
     "06_元数据/模板/每日工作计划模板.md",
     "02_领域/AI编程/并行添加多项功能（Claude Code + Git worktrees）全流程教程.md",
     "02_领域/AI编程/AI编程开发提示词汇总.md",
-    "00_收件箱/2026-03-26.md",
     "00_收件箱/2026-03-24.md",
-    "00_收件箱/2026-03-19.md",
     "00_收件箱/2026-03-16.md",
-    "00_收件箱/2026-03-20.md",
     "06_元数据/模板/每日工作一体化模板.md",
     "06_元数据/模板/每日复盘模板.md",
     "Clippings/【快速入门】你不需要会编程.md",
     "Clippings/【快速入门】认识你的新伙伴.md",
-    "00_收件箱/2026-03-13.md",
     "conflict-files-obsidian-git.md",
     "00_收件箱/2026-01-23复盘.md",
     "01_项目/01_副业项目_油管英语网站/每日进展/2026-02-03.md",
