@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "06_元数据/模板/每日工作一体化模板.md",
+                "file": "00_收件箱/2026-04-17.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "每日工作一体化模板"
+              "title": "2026-04-17"
             }
           }
         ]
@@ -207,8 +207,10 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "627df89148b6bcde",
+  "active": "271a8e3872e3a9a0",
   "lastOpenFiles": [
+    "06_元数据/模板/每日工作一体化模板.md",
+    "00_收件箱/2026-04-17.md",
     "03_资源/AI编程教程/【00】-gstack-开发流程最佳实践.md",
     "03_资源/AI编程教程/00-gstack-开发流程最佳实践.md",
     "03_资源/AI编程教程/gstack-开发流程最佳实践.md",
@@ -230,7 +232,6 @@
     "01_项目/00_政府项目_景泰项目/05-执行推进/2026-01-22.md",
     "03_资源/AI应用与提示词/一个人 + AI + 一群人_直播版 PPT.pdf",
     "02_领域/技术能力/自动化流程的分层架构与环境管理.md.tmp.28016.1776396783104",
-    "06_元数据/模板/每日工作一体化模板.md",
     "03_资源/AI应用与提示词/一个人 + AI + 一群人：亦仁十周年直播分享整理.pdf",
     "02_领域/副业经营/副业方向收束 — 从职场AI到企业服务.md.tmp.28016.1776396766367",
     "06_元数据/参考/收件箱处理流程.md",
@@ -239,7 +240,6 @@
     "04_归档/日志/README.md",
     "04_归档/日志",
     "00_收件箱/2026-03-13.md",
-    "01_项目/00_政府项目_景泰项目/08-风险与问题/2026-04-13 风险与问题.md",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/index.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/detail.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/attendance/records.jpg",
