@@ -4,21 +4,21 @@
     "type": "split",
     "children": [
       {
-        "id": "06177f69d9986dec",
+        "id": "3f505bf350dc7089",
         "type": "tabs",
         "children": [
           {
-            "id": "271a8e3872e3a9a0",
+            "id": "14c16419d8dd4a7c",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "00_收件箱/2026-04-17.md",
+                "file": "00_收件箱/2026-04-20.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-04-17"
+              "title": "2026-04-20"
             }
           }
         ]
@@ -186,7 +186,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -207,10 +207,11 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "271a8e3872e3a9a0",
+  "active": "14c16419d8dd4a7c",
   "lastOpenFiles": [
-    "06_元数据/模板/每日工作一体化模板.md",
+    "00_收件箱/2026-04-20.md",
     "00_收件箱/2026-04-17.md",
+    "06_元数据/模板/每日工作一体化模板.md",
     "03_资源/AI编程教程/【00】-gstack-开发流程最佳实践.md",
     "03_资源/AI编程教程/00-gstack-开发流程最佳实践.md",
     "03_资源/AI编程教程/gstack-开发流程最佳实践.md",
@@ -239,7 +240,6 @@
     "06_元数据/模板/知识卡片模板.md",
     "04_归档/日志/README.md",
     "04_归档/日志",
-    "00_收件箱/2026-03-13.md",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/index.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/detail.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/attendance/records.jpg",
