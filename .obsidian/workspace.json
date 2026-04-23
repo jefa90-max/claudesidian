@@ -11,14 +11,12 @@
             "id": "14c16419d8dd4a7c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "02_领域/儿童教育/庆爸学习路线.md",
-                "mode": "source",
-                "source": false
+                "file": "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf"
               },
-              "icon": "lucide-file",
-              "title": "庆爸学习路线"
+              "icon": "lucide-file-text",
+              "title": "AI_Capabilities_&_Limitations_Framework_Overview"
             }
           }
         ]
@@ -186,7 +184,7 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -207,10 +205,15 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "14c16419d8dd4a7c",
+  "active": "a3843e33d45e850d",
   "lastOpenFiles": [
-    "00_收件箱/2026-04-22.md",
     "02_领域/儿童教育/庆爸学习路线.md",
+    "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf",
+    "03_资源/AI应用与提示词/claude课程/未确认 364912.crdownload",
+    "03_资源/AI应用与提示词/claude课程",
+    "03_资源/AI应用与提示词/新建文件夹",
+    "00_收件箱/2026-04-23.md",
+    "00_收件箱/2026-04-22.md",
     "00_收件箱/2026-04-20.md",
     "00_收件箱/2026-04-21.md",
     "00_收件箱/2026-04-17.md",
@@ -233,12 +236,10 @@
     "04_归档/日志/2026-01-23复盘.md",
     "01_项目/00_政府项目_景泰项目/05-执行推进/2026-01-28.md",
     "01_项目/00_政府项目_景泰项目/05-执行推进/2026-01-23.md",
-    "01_项目/00_政府项目_景泰项目/05-执行推进/2026-01-22.md",
     "03_资源/AI应用与提示词/一个人 + AI + 一群人_直播版 PPT.pdf",
     "02_领域/技术能力/自动化流程的分层架构与环境管理.md.tmp.28016.1776396783104",
     "03_资源/AI应用与提示词/一个人 + AI + 一群人：亦仁十周年直播分享整理.pdf",
     "02_领域/副业经营/副业方向收束 — 从职场AI到企业服务.md.tmp.28016.1776396766367",
-    "06_元数据/参考/收件箱处理流程.md",
     "04_归档/日志",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/index.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/detail.jpg",
@@ -250,10 +251,6 @@
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/attendance/abnormal-detail.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/training/index.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/training/enrollments.jpg",
-    "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/training",
-    "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household",
-    "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/attendance",
-    "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/farmer/snapshot",
-    "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/farmer/services"
+    "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/training"
   ]
 }

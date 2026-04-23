@@ -1,0 +1,24 @@
+{
+  "id": "conv-1776911032847-hrj9bjlwx",
+  "providerId": "claude",
+  "title": "改写文章为小学生版本",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776911032847,
+  "updatedAt": 1776911379462,
+  "lastResponseAt": 1776911379462,
+  "sessionId": "f279a45f-7bb4-43a2-af8f-e0fdfada6efb",
+  "providerState": {
+    "providerSessionId": "f279a45f-7bb4-43a2-af8f-e0fdfada6efb"
+  },
+  "currentNote": "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 3231,
+    "cacheReadInputTokens": 58615,
+    "contextWindow": 1000000,
+    "contextTokens": 61852,
+    "percentage": 6,
+    "contextWindowIsAuthoritative": true
+  }
+}
