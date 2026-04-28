@@ -11,12 +11,14 @@
             "id": "14c16419d8dd4a7c",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf"
+                "file": "00_收件箱/2026-04-28.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "AI_Capabilities_&_Limitations_Framework_Overview"
+              "icon": "lucide-file",
+              "title": "2026-04-28"
             }
           }
         ]
@@ -179,12 +181,12 @@
             "state": {
               "type": "claudian-view",
               "state": {},
-              "icon": "bot",
-              "title": "Claudian"
+              "icon": "lucide-ghost",
+              "title": "claudian-view"
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -205,10 +207,15 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "a3843e33d45e850d",
+  "active": "14c16419d8dd4a7c",
   "lastOpenFiles": [
-    "02_领域/儿童教育/庆爸学习路线.md",
+    "Clippings/用好 AI 跟上时代.md",
     "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf",
+    "Clippings",
+    "00_收件箱/2026-04-28.md",
+    "00_收件箱/2026-04-27.md",
+    "00_收件箱/2026-04-24.md",
+    "02_领域/儿童教育/庆爸学习路线.md",
     "03_资源/AI应用与提示词/claude课程/未确认 364912.crdownload",
     "03_资源/AI应用与提示词/claude课程",
     "03_资源/AI应用与提示词/新建文件夹",
@@ -232,10 +239,6 @@
     "04_归档/日志/2026-03-20.md",
     "04_归档/日志/2026-03-19.md",
     "04_归档/日志/2026-03-16.md",
-    "04_归档/日志/2026-03-13.md",
-    "04_归档/日志/2026-01-23复盘.md",
-    "01_项目/00_政府项目_景泰项目/05-执行推进/2026-01-28.md",
-    "01_项目/00_政府项目_景泰项目/05-执行推进/2026-01-23.md",
     "03_资源/AI应用与提示词/一个人 + AI + 一群人_直播版 PPT.pdf",
     "02_领域/技术能力/自动化流程的分层架构与环境管理.md.tmp.28016.1776396783104",
     "03_资源/AI应用与提示词/一个人 + AI + 一群人：亦仁十周年直播分享整理.pdf",
@@ -250,7 +253,6 @@
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/attendance/abnormal.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/attendance/abnormal-detail.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/training/index.jpg",
-    "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/training/enrollments.jpg",
-    "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/training"
+    "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/training/enrollments.jpg"
   ]
 }
