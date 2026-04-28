@@ -1,0 +1,24 @@
+{
+  "id": "conv-1776920618145-fnw8jb1t1",
+  "providerId": "claude",
+  "title": "讲解文章让普通人能理解",
+  "titleGenerationStatus": "success",
+  "createdAt": 1776920618145,
+  "updatedAt": 1776920687800,
+  "lastResponseAt": 1776920687800,
+  "sessionId": "12095f7c-7025-4925-872a-413ad646d738",
+  "providerState": {
+    "providerSessionId": "12095f7c-7025-4925-872a-413ad646d738"
+  },
+  "currentNote": "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 6,
+    "cacheCreationInputTokens": 9609,
+    "cacheReadInputTokens": 46997,
+    "contextWindow": 1000000,
+    "contextTokens": 56612,
+    "percentage": 6,
+    "contextWindowIsAuthoritative": true
+  }
+}

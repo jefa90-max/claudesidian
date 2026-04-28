@@ -11,14 +11,12 @@
             "id": "14c16419d8dd4a7c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "pdf",
               "state": {
-                "file": "02_领域/儿童教育/庆爸学习路线.md",
-                "mode": "source",
-                "source": false
+                "file": "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf"
               },
-              "icon": "lucide-file",
-              "title": "庆爸学习路线"
+              "icon": "lucide-file-text",
+              "title": "AI_Capabilities_&_Limitations_Framework_Overview"
             }
           }
         ]
@@ -207,10 +205,10 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "14c16419d8dd4a7c",
+  "active": "a3843e33d45e850d",
   "lastOpenFiles": [
-    "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf",
     "02_领域/儿童教育/庆爸学习路线.md",
+    "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf",
     "03_资源/AI应用与提示词/claude课程/未确认 364912.crdownload",
     "03_资源/AI应用与提示词/claude课程",
     "03_资源/AI应用与提示词/新建文件夹",
