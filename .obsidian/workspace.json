@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Clippings/用好 AI 跟上时代 4.md",
+                "file": "Clippings/用好 AI 跟上时代 7.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "用好 AI 跟上时代 4"
+              "title": "用好 AI 跟上时代 7"
             }
           }
         ]
@@ -181,12 +181,12 @@
             "state": {
               "type": "claudian-view",
               "state": {},
-              "icon": "lucide-ghost",
-              "title": "claudian-view"
+              "icon": "bot",
+              "title": "Claudian"
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
@@ -209,15 +209,21 @@
   },
   "active": "14c16419d8dd4a7c",
   "lastOpenFiles": [
+    "Clippings/用好 AI 跟上时代 6.md",
+    "scripts/format_8.py",
+    "scripts/format_7.py",
+    "scripts/format_9.py",
+    "Clippings/用好 AI 跟上时代 6.md.bak",
+    "scripts/format_md.py",
+    "scripts",
+    "Clippings/用好 AI 跟上时代 5.md",
+    "Clippings/用好 AI 跟上时代 4.md",
     "Clippings/用好 AI 跟上时代 3.md",
     "Clippings/用好 AI 跟上时代 2.md",
     "Clippings/用好 AI 跟上时代 1.md",
     "Clippings/用好 AI 跟上时代 9.md",
     "Clippings/用好 AI 跟上时代 8.md",
     "Clippings/用好 AI 跟上时代 7.md",
-    "Clippings/用好 AI 跟上时代 6.md",
-    "Clippings/用好 AI 跟上时代 5.md",
-    "Clippings/用好 AI 跟上时代 4.md",
     "Clippings/用好 AI 跟上时代.md",
     "01_项目/02_副业项目_公众号垂直小号/草稿/AI问诊，居然比医生还准？一万四千人的实验结果让我挺意外的（公众号排版版）.md",
     "01_项目/02_副业项目_公众号垂直小号/草稿/当 AI 打通邮箱、文档和日程，办公室的工作方式要变了（公众号排版版）.md",
@@ -234,17 +240,10 @@
     "00_收件箱/2026-04-30.md",
     "00_收件箱/2026-04-29.md",
     "00_收件箱/2026-04-17.md",
-    "00_收件箱/2026-04-21.md",
     "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf",
     "Clippings",
     "03_资源/AI应用与提示词/claude课程/未确认 364912.crdownload",
     "03_资源/AI应用与提示词/claude课程",
-    "03_资源/AI应用与提示词/新建文件夹",
-    "03_资源/AI应用与提示词/一个人 + AI + 一群人_直播版 PPT.pdf",
-    "02_领域/技术能力/自动化流程的分层架构与环境管理.md.tmp.28016.1776396783104",
-    "03_资源/AI应用与提示词/一个人 + AI + 一群人：亦仁十周年直播分享整理.pdf",
-    "02_领域/副业经营/副业方向收束 — 从职场AI到企业服务.md.tmp.28016.1776396766367",
-    "04_归档/日志",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/index.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/detail.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/attendance/records.jpg",
