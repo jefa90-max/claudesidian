@@ -1,0 +1,24 @@
+{
+  "id": "conv-1778294041647-igvctwsek",
+  "providerId": "claude",
+  "title": "优化文章层次结构",
+  "titleGenerationStatus": "success",
+  "createdAt": 1778294041647,
+  "updatedAt": 1778294127051,
+  "lastResponseAt": 1778294127051,
+  "sessionId": "249b01ff-e4c5-4b0a-8294-7b27bc29b0f1",
+  "providerState": {
+    "providerSessionId": "249b01ff-e4c5-4b0a-8294-7b27bc29b0f1"
+  },
+  "currentNote": "01_项目/02_副业项目_公众号垂直小号/草稿/迭代周期砍一半，产出翻十倍：一个YC合伙人讲透了AI时代怎么带团队.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 6390,
+    "cacheReadInputTokens": 33153,
+    "contextWindow": 200000,
+    "contextTokens": 39544,
+    "percentage": 20,
+    "contextWindowIsAuthoritative": true
+  }
+}
