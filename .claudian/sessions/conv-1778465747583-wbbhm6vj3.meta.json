@@ -1,0 +1,24 @@
+{
+  "id": "conv-1778465747583-wbbhm6vj3",
+  "providerId": "claude",
+  "title": "优化微信公众号文章结构\n\n---\n\n不过我注意到你还**没有提供文章内容**。请把你想要优化的...",
+  "titleGenerationStatus": "success",
+  "createdAt": 1778465747583,
+  "updatedAt": 1778465920804,
+  "lastResponseAt": 1778465920804,
+  "sessionId": "fbd11310-db4e-40fa-be9d-9c0dad6e1e2e",
+  "providerState": {
+    "providerSessionId": "fbd11310-db4e-40fa-be9d-9c0dad6e1e2e"
+  },
+  "currentNote": "01_项目/02_副业项目_公众号垂直小号/草稿/AI教育下一个爆发点，可能不是刷题，是这个方向.md",
+  "usage": {
+    "model": "sonnet",
+    "inputTokens": 1,
+    "cacheCreationInputTokens": 11501,
+    "cacheReadInputTokens": 32813,
+    "contextWindow": 200000,
+    "contextTokens": 44315,
+    "percentage": 22,
+    "contextWindowIsAuthoritative": true
+  }
+}
