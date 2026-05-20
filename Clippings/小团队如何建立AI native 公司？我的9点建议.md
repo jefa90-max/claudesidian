@@ -1,0 +1,257 @@
+---
+title: "小团队如何建立AI native 公司？我的9点建议"
+source: "https://articles.zsxq.com/id_139ul6zigfzz.html"
+author:
+  - "[[希声]]"
+published:
+created: 2026-05-20
+description:
+tags:
+  - "clippings"
+---
+[来自： 生财有术](https://wx.zsxq.com/group/1824528822)
+
+过去2年，我们一直在使用大量的 AI 工具制作工作流。
+
+但今年，随着 AI 的能力进一步延伸到具体事务，并且 AI 编程进一步下放到普通人之后，我意识到组织的价值其实更大。
+
+以下是我的关于建立AI native公司（或者叫做AI原生公司、AI first公司）一些实操和感受和分享。
+
+## 一、工具其实越少越好
+
+飞书+codex+workbuddy+openrounter，这就是我们团队的AI最简配置。
+
+**数据沉淀** ：飞书。但每个人必须开通飞书 CLI，这样 AI 能自由读取飞书的文档和表格。
+
+**编程和 AI 工具** ：Codex一个就够了，每人开 100 美元的套餐，不够再开 200 美元。
+
+**中文内容写作** ：workbuddy。因为 DeepSeek 和 Kimi 在中文内容上确实不错，而 workbuddy 的好处是可以自由切换模型。
+
+如果你有批量调用 AI 的需求，再加一个 Open Router 的 API。可以自由切换各种模型去批量化生产内容、审核内容，举例子来说，用GPTimage-2的模型来做图，用Gemini模型来检查图片效果，作为质检环节。
+
+而且还要思考能不能减少工具或者减少动作，因为越少的工具，越熟练，习惯越好。
+
+比如以前开会我们用飞书，但飞书不支持自动会议总结，我们就再开个豆包在旁边记录。
+
+但是后来飞书支持了，会议结束自动生成。
+
+![](https://article-images.zsxq.com/FnNMjV7SNxNHhbkCiAKI6y1TQxok)
+
+## 二、工作流必须全部重新设计
+
+我们现在习惯把工作流称为Skill工作流。
+
+在团队内，为了更好地理解Skill，我一般让大家把skill理解成一份好的 SOP 文档。
+
+问题是，AI 出现之前 SOP 文档就存在了，但大多数公司是什么情况？要么没人做 SOP，要么做了没人执行，要么执行了没人更新。
+
+所以一个好 SOP 必须符合两个标准： **有人更新，且有人按它执行。**
+
+缺一不可。
+
+回到 Skills 改造工作流的问题，最重要的一点：工作流要全部重新设计。
+
+不是在一个节点里塞进一个 AI 就完事了，而是重头设计彻底重构。
+
+如果你只是在工作的某个环节加一个 AI 节点，然后把它打包成一个 Skill，它大概率不会被更新。
+
+人用一下觉得麻烦、没意义，就不用了；或者觉得还不如自己点两下搞定，AI 做还会犯错——做了 5 分钟，发现问题再改 10 分钟，我自己做 5 分钟就行了。
+
+这就是工作流里加入 AI 最大的问题。
+
+怎么解决？
+
+让这条流程离开 AI 就彻底没法做。
+
+举例子。
+
+主管跟我说，把每周排班表交给助理做。
+
+我说很好，但你必须这样设计：
+
+1. 把每个人员的特点、需求，以及排班的过往经验写成一个文档。
+2. 让助理把文档丢到 workbuddy 里生成排班表。
+3. 最后生成一个 HTML，截图发群里。
+
+核心点来了： **必须强制助理用这个 Skills 工作流来生成排班表。** 不能说为了简单，把上次的复制一下随便改改。只有让这个节点缺了 AI 就没法做，大家才会去推行、去迭代。
+
+## 三、为什么用 Codex？
+
+用 Codex 一个人一个月可能花 100 到 200 美元。
+
+![](https://article-images.zsxq.com/FjANQLe98xnqKKuqrEpiInxjzGKr)
+
+*Codex：把工作流交给代理执行*
+
+但换个角度算：
+
+做一个 Skill，用 Codex 可能 5 分钟就搞定了——甚至不用 5 分钟。因为 Codex 可以自己运行 1 到 2 个小时，你只需要下命令、做检查。
+
+用差的模型，我们需要亲自要跟它来来回回折腾半小时。
+
+5 分钟和半小时，差的这 25 分钟也是成本？
+
+**时间成本是最容易被忽略的成本，因为是隐形的。**
+
+还有第二点更重要。
+
+新人用 AI，结果发现 AI 这么笨，一个事情都做不好，他就会抵触。
+
+从更大层面讲，影响了整个公司的 AI 化改革。
+
+**另一层的隐性成本——对氛围的影响。**
+
+我们很容易习惯只看到明面上的钱，看不到后面的东西。
+
+所以团队付费飞书的账号，从长远来看，也是性价比很高的事情，虽然我也纠结了很久。
+
+## 四、方法的方法
+
+**要建立"方法的方法"这个概念。**
+
+什么意思？
+
+比如让 AI 做一张电商主图，得先回答：好的电商主图标准是什么？
+
+AI 可能找出一堆标准，但标准从哪来？
+
+再具体一点。
+
+我们用 AI 分析 Shopee 上的广告，AI 可能找一堆资料告诉你该怎么改。
+
+但平台的算法经常变化。AI 找的资料是从平台官方来的，还是第三方博主来的？第三方博主的信息有新有旧，侧重点不同，有的优质，有的就是 AI 拼凑的。
+
+所以用 AI 调整广告之前，前面必须先回答：标准是什么？
+
+如果是采纳别人的标准，来源可靠吗？和当下的阶段匹配吗？
+
+产品在什么阶段？新品期还是老品期？广告策略可能完全不同。
+
+目的是什么？推销售额还是拉 ROI？
+
+目标不同，策略就完全不同。
+
+**这叫方法的方法——做事之前，先搞清楚思路。** 思路搞不清楚，一切都只是在错误的路上狂奔。
+
+## 五、做 Skills 的标准流程
+
+做一个 Skills，标准流程应该是：
+
+1. 有没有现成的 Skills 可以直接用？
+2. 如果没有，有没有现成的开源工具可以打包成 Skills？
+3. 如果上面的都没有，或者现有工具只满足一半——能不能在它的基础上改？
+4. 如果这些都实现不了，动手之前先确定方法论，再来做 Skills。
+
+这跟上一条是挂钩的： **找方法论的时候，先判断它是不是你想要的、你需要的，而不是一个过时的方法论。**
+
+很多方法论可能正好相反，这个时候就需要个人的判断力。
+
+## 六、AI Native 公司的五层结构
+
+![](https://article-images.zsxq.com/Fml7lY3eXkqAAQZndF-FUB4ptfcv)
+
+建立 AI native 公司，不是给每个人买一个 AI 工具，而是把公司的数据、工具、流程、SOP、管理方式，全部改造成 AI 可以参与执行的系统。
+
+**第一层：数据层。** 把数据沉淀到云端，让 AI 能读到上下文。
+
+**第二层：工具层。** 减少前台工具入口，但增加后台 API/MCP 连接。
+
+**第三层：流程层。** 把高频重复工作改造成 AI-first 工作流。
+
+**第四层：Skill/SOP 层。** 把每个工作流沉淀成 Skill，明确 owner、输入、输出、检查标准和更新机制，同时注意一定要有质检或者评估的环节。
+
+**第五层：管理层。** 默认先系统扩容，再考虑加人。
+
+真正的 AI native 不是某个员工会用 AI，而是公司里的流程离开 AI 会明显变慢、变贵、变得不可复制。
+
+## 七、核心：培养 AI 习惯
+
+语音输入，这就是个小事。但是要鼓励大家使用。
+
+手机端用豆包输入法，电脑端也可以用豆包，typeless、闪电说等等。
+
+这张图是我用hermes每天帮我看下我的一个免费的知识星球是否有人打广告，有的话自动踢出去并拉黑。
+
+![](https://article-images.zsxq.com/Fjs9wMqxZrwr6kG6niP3iHmF3Een)
+
+再举个例子。
+
+以前我们每天要统计社媒数据和订单数据，那就想：能不能用 API 拉？
+
+如果没有API，我能不能用AI的浏览器能力，直接从浏览器层面去获取数据？或者rpa？
+
+即使是发布这么个简单的动作，也得想，能不能每周自动统计、自动发，而不是让人来发？
+
+还有一个核心： **要鼓励大家用各种AI工具来代替现有的工具。**
+
+比如现在我就反对大家用canva、稿定设计这类工具，必须用api直接做图或者至少用lovart这类工具。
+
+因为这是思路的转变。
+
+如果还在用 Canva 这类工具，我们就习惯于拖拖拽拽，拉一拉，调一调，陷入到很多价值不大的小细节上面。
+
+但如果是用绘图 API 或者 Lovart 这类工具，那就要求你必须把提示词沉淀下来，才能做到高效的创作。
+
+新的工具使用过程中会出现很多问题，甚至一开始非常影响效率，但这恰恰是在培养我们的习惯。
+
+就像我以前说的，要习惯"万事问 AI"，而不是万事都自己先动手。
+
+理论上 AI 比我聪明 10 倍，而且它会越来越聪明。
+
+去折腾、去提问、去调试、去尝试——也许当下没有直接产出，但你能得到最有价值的东西： **AI 习惯。** 这是一个不容易被意识到，但价值极大、复利极大的东西。
+
+## 八、许多工作流80-90 分就够了
+
+我一直在尝试用 AI 更高效地做内容，把这过程分为：找选题、分析选题、内容创作、个性化改写、排版检测优化、发布、反馈搜集。
+
+但在做排版优化的时候，如果你试图穷尽 AI 常见的句式问题并加以限制，会发现： **不可能穷尽这些问题。**
+
+然后我意识到：
+
+第一、穷尽没有意义。
+
+AI 在不停进化，今天写下的限制，明天可能就成了新 AI 的负担。
+
+所以很多人习惯给 Claude.md 写大量的规则，其实这是很不利的。
+
+当然，如果你是在具体工作流下这么做没问题，但如果是在全局下面，那就不是一件很好的事情。
+
+第二、内容的本质不同于程序。内容永远无法做到绝对精密。追求 100% 的精密和自动化，这条路一定会碰壁。
+
+**我们用 AI 做出 80-90 分就够了，而且这几乎就是极限。** 再往上追求，投入产出比会非常低。
+
+这是一个很重要的领悟，只有亲自上手做，才能悟出来。
+
+## 九、AI是0，人的判断和精力才是1
+
+最后我想从两个点来讲，作为九点的分享。
+
+第一个就是有了AI，我们可以同时开10个窗口，做10个任务，跑10个项目。
+
+无形中，这就像是一种虚荣感，就好像是我拥有了10个员工、100个员工在帮我做事情。但问题是，他们可能是在错误的方向上做。
+
+所以我想表达的是说我们的判断力实际上是一，AI是后面的零。
+
+只有我们给好的判断、好的方向。把握好这个点，然后在这个基础上，AI进行干活，我们最终产出的东西才是我们想要的。
+
+因为所有东西最终都要拿到市场上去检验，市场是非常残酷的，如果不是一个好东西，那大概率只会被残酷的淘汰掉。
+
+第二个是要保护好自己的精力。
+
+因为我们可以同时做10个项目，所以我们分配到每个项目上的精力实际上都变少了。
+
+那我们的判断力实际上也会下降，所以我们的产品能够更好地吸引别人吗？
+
+这也许比没有AI之后效果还变得更差了。
+
+因为我们可能是在批量的产出50分、60分的东西，但市场不需要50分、60分的东西，因为这些东西都已经有了，市场需要的是80分、90分的东西。
+
+所以只有把精力保护好，放在最值得投入的事情上面，再加上AI的执行力，那么我们才能做到用更少的时间、更少的成本创造出90分的东西。
+
+![](data:image/png;base64,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)
+
+扫码加入星球
+
+查看更多优质内容
+
+https://wx.zsxq.com/mweb/views/joingroup/join\_group.html?group\_id=1824528822
