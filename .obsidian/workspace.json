@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_项目/00_政府项目_景泰项目/02-需求与范围/待确认问题/待确认问题2026-06.md",
+                "file": "02_领域/健康健身/家庭减脂塑形入门：饮食、有氧与哑铃重量选择.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "待确认问题2026-06"
+              "title": "家庭减脂塑形入门：饮食、有氧与哑铃重量选择"
             }
           }
         ]
@@ -186,7 +186,7 @@
             }
           }
         ],
-        "currentTab": 6
+        "currentTab": 5
       }
     ],
     "direction": "horizontal",
@@ -207,10 +207,16 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "14c16419d8dd4a7c",
+  "active": "51be3e36cc62915a",
   "lastOpenFiles": [
-    "Clippings/How to Build a Software Factory with Claude Code That Ships Features While You Sleep.md",
+    "00_收件箱/2026-05-11.md",
+    "00_收件箱/家庭减脂塑形入门：饮食、有氧与哑铃重量选择.md",
+    "02_领域/健康健身/家庭减脂塑形入门：饮食、有氧与哑铃重量选择.md",
+    "02_领域/健康健身",
+    "00_收件箱/2026-06-03.md",
+    "00_收件箱/2026-04-17.md",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/待确认问题/待确认问题2026-06.md",
+    "Clippings/How to Build a Software Factory with Claude Code That Ships Features While You Sleep.md",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/待确认问题",
     "00_收件箱/2026-06-02.md",
     "00_收件箱/2026-06-01.md",
@@ -222,7 +228,6 @@
     "00_收件箱/2026-05-22.md",
     "00_收件箱/2026-05-21.md",
     "Clippings/小团队如何建立AI native 公司？我的9点建议.md",
-    "00_收件箱/家庭减脂塑形入门：饮食、有氧与哑铃重量选择.md",
     "00_收件箱/2026-05-20.md",
     "00_收件箱/2026-05-19.md",
     "00_收件箱/2026-05-18.md",
@@ -231,11 +236,7 @@
     "00_收件箱/2026-05-13.md",
     "00_收件箱/2026-05-12.md",
     "01_项目/02_副业项目_公众号垂直小号/草稿/AI教育下一个爆发点，可能不是刷题，是这个方向.md",
-    "00_收件箱/2026-05-11.md",
     "00_收件箱/2026-05-09.md",
-    "01_项目/02_副业项目_公众号垂直小号/草稿/迭代周期砍一半，产出翻十倍：一个YC合伙人讲透了AI时代怎么带团队.md",
-    "02_领域/儿童教育/庆爸学习路线.md",
-    "Clippings/用好 AI 跟上时代 9.md",
     "scripts/format_8.py",
     "scripts/format_7.py",
     "scripts/format_9.py",
@@ -244,7 +245,6 @@
     "scripts",
     "03_资源/AI应用与提示词/claude课程/AI_Capabilities_&_Limitations_Framework_Overview.pdf",
     "Clippings",
-    "03_资源/AI应用与提示词/claude课程/未确认 364912.crdownload",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/index.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/detail.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/attendance/records.jpg",
