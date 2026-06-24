@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "01_项目/00_政府项目_景泰项目/03-调研与资料/快捷命令.md",
+                "file": "03_资源/AI编程教程/远程tmux启动claude code.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "快捷命令"
+              "title": "远程tmux启动claude code"
             }
           }
         ]
@@ -209,10 +209,14 @@
   },
   "active": "14c16419d8dd4a7c",
   "lastOpenFiles": [
+    "02_领域/健康健身/食谱/复刻山姆奶香馒头.md",
+    "02_领域/健康健身/食谱",
+    "00_收件箱/2026-06-24.md",
+    "00_收件箱/2026-06-23.md",
+    "01_项目/00_政府项目_景泰项目/03-调研与资料/快捷命令.md",
     "00_收件箱/2026-06-22.md",
     "03_资源/AI编程教程/tmux快捷命令速查.md",
     "00_收件箱/2026-06-19.md",
-    "01_项目/00_政府项目_景泰项目/03-调研与资料/快捷命令.md",
     "00_收件箱/2026-06-18.md",
     "03_资源/AI编程教程/远程tmux启动claude code.md",
     "00_收件箱/2026-06-16.md",
@@ -238,13 +242,9 @@
     "01_项目/00_政府项目_景泰项目/02-需求与范围/待确认问题",
     "00_收件箱/2026-06-02.md",
     "00_收件箱/2026-06-01.md",
-    "00_收件箱/2026-05-29.md",
-    "00_收件箱/2026-05-28.md",
-    "00_收件箱/2026-05-27.md",
     "scripts/format_8.py",
     "scripts/format_7.py",
     "scripts/format_9.py",
-    "Clippings/用好 AI 跟上时代 6.md.bak",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/index.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/household/detail.jpg",
     "01_项目/00_政府项目_景泰项目/02-需求与范围/screenshots/manager/services/attendance/records.jpg",
