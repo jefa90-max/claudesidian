@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "02_领域/技术能力/VPS代理与SSH安全加固记录.md",
+                "file": "03_资源/AI编程教程/远程tmux启动claude code.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "VPS代理与SSH安全加固记录"
+              "title": "远程tmux启动claude code"
             }
           }
         ]
@@ -209,8 +209,8 @@
   },
   "active": "14c16419d8dd4a7c",
   "lastOpenFiles": [
-    "00_收件箱/2026-06-25.md",
     "02_领域/技术能力/VPS代理与SSH安全加固记录.md",
+    "00_收件箱/2026-06-25.md",
     "01_项目/00_政府项目_景泰项目/03-调研与资料/快捷命令.md",
     "03_资源/AI编程教程/远程tmux启动claude code.md",
     "02_领域/健康健身/食谱/复刻山姆奶香馒头.md",
