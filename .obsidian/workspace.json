@@ -186,11 +186,11 @@
             }
           }
         ],
-        "currentTab": 5
+        "currentTab": 6
       }
     ],
     "direction": "horizontal",
-    "width": 288.5
+    "width": 673.5
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -207,7 +207,7 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "14c16419d8dd4a7c",
+  "active": "51be3e36cc62915a",
   "lastOpenFiles": [
     "03_资源/AI编程教程/远程tmux启动claude code.md",
     "03_资源/AI编程教程/Mac mini 远程开发工作流完全手册.md",

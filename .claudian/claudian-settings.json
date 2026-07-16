@@ -3,7 +3,7 @@
   "permissionMode": "yolo",
   "model": "opus",
   "thinkingBudget": "medium",
-  "effortLevel": "high",
+  "effortLevel": "max",
   "serviceTier": "default",
   "enableAutoTitleGeneration": true,
   "titleGenerationModel": "",
@@ -14,13 +14,11 @@
   "sharedEnvironmentVariables": "",
   "envSnippets": [],
   "customContextLimits": {},
-  "customModelAliases": {},
   "keyboardNavigation": {
     "scrollUpKey": "w",
     "scrollDownKey": "s",
     "focusInputKey": "i"
   },
-  "requireCommandOrControlEnterToSend": false,
   "locale": "en",
   "providerConfigs": {
     "claude": {
@@ -30,6 +28,8 @@
       "loadUserSettings": true,
       "enableChrome": false,
       "enableBangBash": false,
+      "enableOpus1M": false,
+      "enableSonnet1M": false,
       "customModels": "",
       "lastModel": "opus",
       "environmentVariables": "",
@@ -45,11 +45,10 @@
       "environmentVariables": "",
       "environmentHash": "",
       "installationMethodsByHost": {
-        "device:151f48d0-933b-46e0-ac39-4cc5e7e38a10": "native-windows"
+        "device:151f48d0-933b-46e0-ac39-4cc5e7e38a10": "native-windows",
+        "qiaoyu": "native-windows"
       },
-      "wslDistroOverridesByHost": {},
-      "modelAliases": {},
-      "visibleModels": null
+      "wslDistroOverridesByHost": {}
     },
     "opencode": {
       "cliPath": "",
@@ -81,7 +80,7 @@
     "claude": "opus"
   },
   "savedProviderEffort": {
-    "claude": "high"
+    "claude": "max"
   },
   "savedProviderServiceTier": {},
   "savedProviderThinkingBudget": {
@@ -92,10 +91,12 @@
   },
   "lastCustomModel": "",
   "maxTabs": 3,
+  "tabBarPosition": "input",
   "enableAutoScroll": true,
   "deferMathRenderingDuringStreaming": true,
-  "expandFileEditsByDefault": false,
   "chatViewPlacement": "right-sidebar",
   "hiddenProviderCommands": {},
-  "tabBarPosition": "input"
+  "customModelAliases": {},
+  "requireCommandOrControlEnterToSend": false,
+  "expandFileEditsByDefault": false
 }

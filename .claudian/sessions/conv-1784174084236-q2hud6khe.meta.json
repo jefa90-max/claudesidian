@@ -1,0 +1,23 @@
+{
+  "id": "conv-1784174084236-q2hud6khe",
+  "providerId": "claude",
+  "title": "我想根据这篇文档写一个教程，面向不是特别懂AI或者编程的人群，说清楚我的应用场景和背景，不同场景下的...",
+  "titleGenerationStatus": "failed",
+  "createdAt": 1784174084237,
+  "updatedAt": 1784174101334,
+  "lastResponseAt": 1784174101334,
+  "sessionId": "e9788670-c5fe-4352-a303-03bb3fd347b5",
+  "providerState": {
+    "providerSessionId": "e9788670-c5fe-4352-a303-03bb3fd347b5"
+  },
+  "currentNote": "03_资源/AI编程教程/Mac mini 远程开发工作流完全手册.md",
+  "usage": {
+    "model": "opus",
+    "inputTokens": 0,
+    "cacheCreationInputTokens": 0,
+    "cacheReadInputTokens": 0,
+    "contextWindow": 200000,
+    "contextTokens": 0,
+    "percentage": 0
+  }
+}
