@@ -223,6 +223,10 @@ Codex 不走 Termius SSH。电脑使用 Codex 桌面端，手机使用 Codex App
 
 VS Code 的窗口开在 Windows 上，但你打开的是 Mac mini 里的远程目录，终端也实际运行在 Mac mini 上。你不需要把同一份文件和运行环境复制到 Windows。
 
+连接成功后，VS Code 左侧的资源管理器会像打开本地文件夹一样，直观地显示 Mac mini 上的文件夹和文件。你可以直接点击文件打开、逐层展开目录，也可以使用 VS Code 的搜索功能查找文件或内容，不需要先学会用终端命令在目录之间寻找。
+
+这正是 VS Code Remote SSH 对非技术用户最友好的地方：文件实际保存在 Mac mini 上，但查看和编辑方式与平时在 VS Code 中打开本地文件几乎一样。连接后，窗口底部状态栏会显示远程主机名，帮助你分清自己正在操作 Windows 本地文件，还是 Mac mini 上的远程文件。
+
 它还承担一个重要职责：端口转发。当 Mac mini 上有一个只能本机访问的 Web 或 API 时，VS Code 可以把这个端口带到 Windows，再让浏览器或手机访问。
 
 VS Code Remote SSH 是电脑上的主入口，但它不适合操作微信开发者工具等完整的 macOS 图形界面。
