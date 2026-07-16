@@ -29,6 +29,7 @@ pnpm-lock.yaml
 # Temporary directories
 .tmp/
 .worktrees/
+tasks/todo.md
 
 # Never commit real API keys
 *_API_KEY
