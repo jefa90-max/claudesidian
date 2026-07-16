@@ -401,11 +401,598 @@ Mac mini 保持在线
 
 ### 第 6 章　准备设备、账号和网络
 
+这一章不安装任何东西，只把后面会用到的设备、账号和名称准备好。提前记录这些信息，可以避免你在不同设备之间来回确认“用户名到底是什么”“哪台机器才是 Mac mini”。
+
+#### 6.1 需要准备的三台设备
+
+本文按照下面这套实际组合演示：
+
+| 设备 | 主要作用 | 第一次设置时需要什么 |
+|---|---|---|
+| Mac mini | 持续在线的远程主机 | 显示器、键盘和鼠标 |
+| Windows 笔记本 | 电脑端控制入口 | 能正常联网 |
+| 手机 | 移动 SSH、Codex 连接和真机预览 | 能安装 Tailscale、Termius 和 Codex App |
+
+第一次搭建必须在 Mac mini 旁边完成。不要在只剩远程连接的情况下修改睡眠、网络、SSH 或磁盘加密设置，否则一步操作出错就可能失去连接。
+
+#### 6.2 固定主机需要稳定的电源和网络
+
+Mac mini 要长期放在一个固定位置，并保持供电。网络优先使用下面的连接方式：
+
+```text
+Mac mini
+→ 网线
+→ 家庭或办公室路由器的 LAN 口
+```
+
+Wi-Fi 也能使用，但有线连接通常更稳定。Tailscale 不要求你拥有公网 IP，也不需要在路由器上开放 SSH 端口。
+
+如果所在地偶尔停电，可以以后增加 UPS，但它不是完成第一次连接的前提。
+
+#### 6.3 需要准备的账号和应用
+
+| 工具 | 安装在哪些设备 | 是否要求同一账号 |
+|---|---|---|
+| Tailscale | Mac mini、Windows、手机 | 三台设备必须进入同一个 tailnet |
+| VS Code | Windows | 不要求与 Tailscale 使用同一账号 |
+| Termius | 手机 | 可以先不注册同步账号，但要保护好连接凭据 |
+| ToDesk 或网易 UU | Mac mini、Windows | 两端需要建立可用的远程控制关系 |
+| Claude Code | Mac mini | 在远程终端中使用 |
+| Codex | Windows 桌面端和手机 App | 使用同一个 OpenAI 账号更方便继续远程会话 |
+| 微信开发者工具 | Mac mini | 需要微信开发者账号 |
+
+这一批章节只配置 Tailscale、SSH 和 Termius。其他应用会在后面的对应章节处理。
+
+#### 6.4 统一设备名称
+
+设备名称应该短、容易输入，并且一眼能看出是哪台设备。本文统一使用：
+
+```text
+Mac mini：macmini-dev
+Windows：win-laptop
+手机：phone-joe
+```
+
+你可以换成自己的名称，但后面看到 `macmini-dev` 时，要知道它代表你的 Mac mini，而不是一条可以原样照抄的固定名称。
+
+名称尽量只使用英文字母、数字和连字符，不要使用空格和中文。这样在 SSH 和其他工具里输入时更省事。
+
+#### 6.5 记录 Mac mini 用户名
+
+SSH 登录不仅需要设备名称，还需要 Mac mini 上的用户账号。这个用户名不一定等于你在登录界面看到的中文全名。
+
+**在 Mac mini 的“终端”中执行：**
+
+```bash
+whoami
+```
+
+假设输出是：
+
+```text
+yourname
+```
+
+把它记录下来。后面的 `yourname` 都要替换为这个真实用户名。
+
+> [!warning] 不要记录在公开文档里的信息
+> 不要把 Mac 登录密码、SSH 私钥、Tailscale 登录凭据或恢复密钥写进这篇教程。教程只记录设备名、用户名和操作路径。
+
 ### 第 7 章　让 Mac mini 适合作为长期远程主机
+
+普通 Mac 默认以“有人坐在机器前使用”为前提。作为远程主机后，它需要保持在线、允许 SSH 登录，并且在关闭显示器后仍然继续运行。
+
+#### 7.1 给 Mac mini 设置容易识别的名称
+
+**在 Mac mini 上操作：**
+
+```text
+苹果菜单
+→ 系统设置
+→ 通用
+→ 关于本机
+→ 名称
+```
+
+把名称改成前面确定的 `macmini-dev`。
+
+这个名称用于 Finder 和共享服务。macOS 还会生成一个本地网络名称，例如：
+
+```text
+macmini-dev.local
+```
+
+在同一个局域网内，你可能会看到 `.local` 名称；通过 Tailscale MagicDNS 连接时，后面主要使用 `macmini-dev`。
+
+#### 7.2 防止 Mac mini 自动睡眠
+
+显示器可以关闭，但 Mac mini 本身不能因为长时间无人操作而自动睡眠。
+
+**在 Mac mini 上操作：**
+
+```text
+苹果菜单
+→ 系统设置
+→ 能源
+```
+
+打开下面两个选项：
+
+- **显示器关闭时防止自动睡眠**；
+- **唤醒以供网络访问**。
+
+不同机型和 macOS 版本显示的选项可能略有差异。最关键的是第一项：关闭显示器不等于让整台 Mac 进入睡眠。
+
+Apple 提醒，阻止睡眠会增加耗电。对于长期远程主机，这是为了保持可连接而接受的取舍。
+
+#### 7.3 设置断电恢复后的启动方式
+
+仍然在“能源”设置中，查看是否有下面其中一个选项：
+
+- **接通电源时启动**；
+- **断电后自动启动**。
+
+较新的 Mac mini 和 macOS 可能提供“接通电源时启动”，可以选择“总是”或“断电后”。其他机型可能显示“断电后自动启动”。如果你的设置中没有这个选项，不要为了追求一致而执行不理解的系统命令。
+
+这个设置只能帮助 Mac mini 在恢复供电后开机，不能保证所有远程软件已经登录并可用。完成整套配置后，还要实际重启一次确认。
+
+#### 7.4 开启 Remote Login
+
+Remote Login 是 macOS 自带的 SSH 服务。Tailscale 负责建立私网，真正接收 SSH 连接的是这里。
+
+**在 Mac mini 上操作：**
+
+```text
+苹果菜单
+→ 系统设置
+→ 通用
+→ 共享
+→ 远程登录右侧的信息按钮
+→ 打开“远程登录”
+```
+
+在“允许访问”中选择：
+
+```text
+仅这些用户
+→ 添加你自己的 Mac 用户
+```
+
+不要为了省一步直接允许所有用户。本文也不需要打开“允许远程用户完全访问磁盘”；只有确认某项功能确实需要时再单独授权。
+
+打开后，页面会显示一条类似下面的 SSH 地址：
+
+```text
+ssh yourname@macmini-dev.local
+```
+
+先把这条地址记下来，下一章安装 Tailscale 后会改用更适合外出连接的设备名。
+
+#### 7.5 打开防火墙，但不要公开 22 端口
+
+**在 Mac mini 上操作：**
+
+```text
+苹果菜单
+→ 系统设置
+→ 网络
+→ 防火墙
+→ 打开
+```
+
+开启 Remote Login 后，macOS 的共享服务可以按系统规则接收连接。本文使用 Tailscale 私网访问 SSH，不需要在家庭路由器中把公网 22 端口转发给 Mac mini。
+
+> [!danger] 不要照着网上教程开放公网 SSH
+> 路由器端口转发、DMZ 主机和公网暴露都不属于本文方案。后面如果 SSH 连不上，应先检查 Tailscale、Remote Login 和用户名，而不是把 22 端口直接暴露到互联网。
+
+#### 7.6 谨慎处理 FileVault 和系统更新
+
+FileVault 可以提高磁盘数据安全，但远程主机在重启后是否能远程解锁，取决于 Mac 机型、macOS 版本和网络条件。macOS 26 或更新版本的部分 Apple 芯片 Mac 已支持在符合条件时通过 SSH 解锁 FileVault，但不要假设自己的机器一定满足条件。
+
+更稳妥的做法是：
+
+1. 把 FileVault 恢复密钥安全保存在 Mac mini 以外的位置；
+2. 在本地重启 Mac mini；
+3. 不触碰本机键盘，分别测试 Tailscale、SSH 和备用远程桌面；
+4. 确认真正能恢复连接后再出门。
+
+系统大版本更新也应在本地进行。不要在出差前一天更新 macOS、Tailscale 和所有远程工具，否则出现问题时很难判断是哪一层发生了变化。
+
+#### 7.7 现在应该看到什么
+
+完成本章后，Mac mini 应该保持开机和联网；显示器关闭后机器仍然运行；“远程登录”处于开启状态，并且只有你指定的用户可以登录。
+
+下一章才会建立外出使用的私网入口。此时不要急着从手机流量连接，也不要改动 SSH 的高级配置。
+
+> [!info] 官方参考
+> - [Apple：更改 Mac 的电脑名称或本地主机名](https://support.apple.com/guide/mac-help/mchlp2322/mac)
+> - [Apple：设置 Mac 的睡眠与唤醒](https://support.apple.com/guide/mac-help/set-sleep-and-wake-settings-mchle41a6ccd/mac)
+> - [Apple：设置 Mac mini 接通电源时启动](https://support.apple.com/en-us/125517)
+> - [Apple：允许远程电脑访问 Mac](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
+> - [Apple：更改 Mac 防火墙设置](https://support.apple.com/guide/mac-help/change-firewall-settings-on-mac-mh11783/mac)
+> - [Apple：FileVault 与 SSH 解锁说明](https://support.apple.com/guide/deployment/dep82064ec40/web)
 
 ### 第 8 章　安装 Tailscale，建立安全私网
 
+这一章要让 Mac mini、Windows 和手机进入同一个 Tailscale 私网。完成后，即使三台设备不在同一个 Wi-Fi 下，也能使用 Tailscale 分配的名称或地址互相找到。
+
+#### 8.1 先理解“同一个 tailnet”
+
+第一次在某台设备登录 Tailscale 时，Tailscale 会创建或加入一个名为 **tailnet** 的私有网络。
+
+三台设备必须使用同一种身份登录到同一个 tailnet。例如，Mac mini 使用某个 Google 账号登录，Windows 和手机也要使用同一个账号和同一个登录入口。
+
+仅仅在三台设备上都安装 Tailscale 还不够。如果登录到了不同账号，它们仍然看不到彼此。
+
+#### 8.2 在 Mac mini 安装 Tailscale
+
+Tailscale 官方当前推荐 macOS 使用 standalone 版本。当前客户端要求 macOS 12 Monterey 或更高版本。
+
+**在 Mac mini 上操作：**
+
+1. 打开 [Tailscale macOS 安装页面](https://tailscale.com/docs/install/mac)；
+2. 选择官方标注为推荐的 **Standalone variant**；
+3. 下载并安装；
+4. 打开 Tailscale，按引导允许安装 VPN 配置；
+5. 使用你准备好的账号登录。
+
+macOS 弹出的 VPN 配置授权是正常步骤。Tailscale 需要它来建立私网连接。
+
+登录完成后，Tailscale 菜单中应该能看到这台 Mac 已连接。暂时不要关闭应用，也不要切换到其他登录账号。
+
+#### 8.3 在 Windows 安装 Tailscale
+
+**在 Windows 上操作：**
+
+1. 打开 [Tailscale Windows 安装页面](https://tailscale.com/docs/install/windows)；
+2. 下载最新的 `.exe` 安装程序；
+3. 完成安装后，在任务栏右下角找到 Tailscale 图标；
+4. 如果图标没有直接显示，点击向上的箭头展开托盘图标；
+5. 右键点击 Tailscale，选择登录；
+6. 浏览器打开后，使用与 Mac mini 相同的账号完成登录。
+
+Windows 客户端登录成功后，托盘菜单会显示当前账号和连接状态。
+
+#### 8.4 在手机安装 Tailscale
+
+**在 iPhone 上：**从 App Store 安装 Tailscale。当前官方客户端要求 iOS 15 或更高版本。
+
+**在 Android 上：**从 Google Play 安装 Tailscale。当前官方客户端要求 Android 8 或更高版本。
+
+打开应用后：
+
+1. 点击开始；
+2. 允许创建 VPN 配置；
+3. 允许必要的系统提示；
+4. 使用与 Mac mini、Windows 相同的账号登录；
+5. 打开 Tailscale 连接开关。
+
+手机状态栏出现 VPN 标识是正常现象。它表示手机已经启用 Tailscale 网络连接，不代表所有手机流量都会经 Mac mini 转发。本文不会把 Mac mini 配置为出口节点。
+
+#### 8.5 在管理后台确认三台设备
+
+在浏览器打开 Tailscale 管理后台的 **Machines** 页面。你应该看到 Mac mini、Windows 和手机三台设备。
+
+给它们设置容易识别的名称：
+
+```text
+macmini-dev
+win-laptop
+phone-joe
+```
+
+通常可以在设备行右侧的菜单中编辑 machine name。改名后，后面的 MagicDNS 名称也会跟着变化。
+
+如果 Machines 页面只有两台设备，先不要继续配置 SSH。回到缺失的那台设备，检查它是否使用了同一个 Tailscale 登录账号。
+
+#### 8.6 使用 MagicDNS 设备名
+
+MagicDNS 会把设备名注册成 tailnet 内可使用的地址。2022 年 10 月 20 日以后创建的 tailnet 默认启用 MagicDNS；如果你的网络较早，可以在 Tailscale 管理后台的 **DNS** 页面检查。
+
+启用后，不需要记住一串 `100.x.x.x` 地址。后面可以直接使用：
+
+```text
+macmini-dev
+```
+
+如果设备名暂时无法解析，也可以打开 Tailscale 设备详情，记录 Mac mini 的 `100.x.x.x` 地址作为排错备用。日常连接仍然优先使用设备名。
+
+#### 8.7 检查三台设备是否在线
+
+最直观的检查方式是查看 Tailscale 应用或 Machines 页面：三台设备都应显示在线或最近在线。
+
+如果 Windows 的 Tailscale 命令行可用，可以在 **Windows PowerShell** 中执行：
+
+```powershell
+tailscale status
+```
+
+你应该在输出中看到 `macmini-dev` 和手机名称。
+
+也可以在 **Windows PowerShell** 中测试 Tailscale 网络：
+
+```powershell
+tailscale ping macmini-dev
+```
+
+如果 Windows 客户端没有提供命令行，就使用托盘菜单和 Machines 页面检查，不必为了这一步安装其他工具。
+
+#### 8.8 只对可信的 Mac mini 关闭 key expiry
+
+Tailscale 设备密钥会定期要求重新认证。密钥过期后，这台设备与其他设备之间的 Tailscale 连接会停止。
+
+Mac mini 长期放在固定位置，适合在确认设备可信后关闭 key expiry：
+
+```text
+Tailscale 管理后台
+→ Machines
+→ 找到 macmini-dev
+→ 右侧菜单
+→ Disable Key Expiry
+```
+
+不要顺手对 Windows 和手机也关闭过期。它们是随身设备，更容易丢失。关闭密钥过期会降低安全性，只应针对难以现场重新认证、并且由你长期控制的 Mac mini。
+
+#### 8.9 本文使用 OpenSSH over Tailscale
+
+从这一章开始，连接关系是：
+
+```text
+Tailscale：提供三台设备之间的私网
+macOS Remote Login：提供 SSH 服务
+Windows / Termius：通过 Tailscale 设备名连接 SSH
+```
+
+这叫做普通 OpenSSH 运行在 Tailscale 私网上。本文不启用 Tailscale SSH，也不修改 tailnet policy。这样与 VS Code Remote SSH、Windows OpenSSH 和 Termius 的配合更直接，也更容易排查。
+
+> [!info] 官方参考
+> - [Tailscale：在 macOS 安装](https://tailscale.com/docs/install/mac)
+> - [Tailscale：在 Windows 安装](https://tailscale.com/docs/install/windows)
+> - [Tailscale：在 iOS 安装](https://tailscale.com/docs/install/ios)
+> - [Tailscale：在 Android 安装](https://tailscale.com/docs/install/android)
+> - [Tailscale：MagicDNS](https://tailscale.com/docs/features/magicdns)
+> - [Tailscale：Key expiry](https://tailscale.com/docs/features/access-control/key-expiry)
+
 ### 第 9 章　配置 SSH，让电脑和手机进入 Mac mini
+
+Tailscale 让三台设备处于同一个私网，但它本身不会把 Mac mini 终端显示出来。现在需要使用 SSH 真正登录 Mac mini。
+
+这一章分成两条路径：
+
+```text
+Windows → OpenSSH → Mac mini
+手机 → Tailscale → Termius → Mac mini
+```
+
+#### 9.1 检查 Windows 的 OpenSSH Client
+
+Windows 只需要 **OpenSSH Client**，不需要安装 OpenSSH Server。
+
+**在 Windows PowerShell 中执行：**
+
+```powershell
+ssh -V
+```
+
+如果能看到 OpenSSH 版本号，说明客户端已经可用。
+
+如果提示找不到 `ssh`，在 Windows 中打开：
+
+```text
+设置
+→ 系统
+→ 可选功能
+→ 查看功能或添加可选功能
+→ 搜索 OpenSSH Client
+→ 安装
+```
+
+安装完成后重新打开 PowerShell，再执行一次 `ssh -V`。
+
+#### 9.2 第一次从 Windows 使用密码登录
+
+开始前确认：
+
+- Mac mini 已开启 Remote Login；
+- Mac mini 和 Windows 的 Tailscale 都处于连接状态；
+- 你已经知道 Mac mini 的真实用户名；
+- Tailscale 中的 Mac 名称是 `macmini-dev`。
+
+**在 Windows PowerShell 中执行：**
+
+```powershell
+ssh yourname@macmini-dev
+```
+
+把 `yourname` 换成第 6 章记录的 Mac 用户名。
+
+第一次连接会显示主机指纹，并询问是否继续。确认你连接的是自己的 `macmini-dev` 后输入：
+
+```text
+yes
+```
+
+接着输入 Mac mini 的登录密码。输入密码时屏幕不会显示星号或字符，这是终端的正常安全行为，输入完成后直接按回车。
+
+登录成功后执行：
+
+```bash
+whoami
+hostname
+pwd
+```
+
+这里的命令已经在 Mac mini 上执行。如果 `whoami` 显示你的 Mac 用户名，说明基础 SSH 链路已经成立。
+
+#### 9.3 在 Windows 生成专用 SSH 密钥
+
+每次输入 Mac 登录密码既不方便，也不适合作为长期连接方式。接下来为这台 Windows 生成一对只用于连接 Mac mini 的 SSH 密钥。
+
+**在 Windows PowerShell 中执行：**
+
+```powershell
+New-Item -ItemType Directory -Force $HOME\.ssh
+ssh-keygen -t ed25519 -f $HOME\.ssh\id_ed25519_macmini -C "windows-to-macmini"
+```
+
+命令会询问是否设置 passphrase。设置后更安全，但以后连接时可能需要输入这段口令；不设置则操作更方便。无论选择哪一种，都不能把私钥发给别人。
+
+生成后会得到两个文件：
+
+```text
+C:\Users\你的用户名\.ssh\id_ed25519_macmini
+C:\Users\你的用户名\.ssh\id_ed25519_macmini.pub
+```
+
+- 带 `.pub` 的文件是公钥，可以放到 Mac mini；
+- 不带 `.pub` 的文件是私钥，只能保存在 Windows 自己的账户中。
+
+#### 9.4 把 Windows 公钥加入 Mac mini
+
+下面的命令会先用 Mac 登录密码连接，然后把 Windows 公钥加入 Mac mini 的授权列表。
+
+**在 Windows PowerShell 中执行：**
+
+```powershell
+Get-Content $HOME\.ssh\id_ed25519_macmini.pub | ssh yourname@macmini-dev "umask 077; mkdir -p ~/.ssh; cat >> ~/.ssh/authorized_keys; chmod 600 ~/.ssh/authorized_keys"
+```
+
+替换 `yourname`，输入最后一次 Mac 登录密码。
+
+然后测试密钥登录：
+
+```powershell
+ssh -i $HOME\.ssh\id_ed25519_macmini yourname@macmini-dev
+```
+
+如果你设置了密钥 passphrase，这里输入的是密钥口令，不是 Mac 登录密码。成功进入 Mac 终端，说明公钥配置完成。
+
+#### 9.5 配置一个容易记住的 SSH 名称
+
+打开 Windows 用户目录中的文件：
+
+```text
+C:\Users\你的用户名\.ssh\config
+```
+
+如果文件不存在，可以新建一个名为 `config`、没有扩展名的文本文件。
+
+写入下面内容：
+
+```sshconfig
+Host macmini
+    HostName macmini-dev
+    User yourname
+    IdentityFile ~/.ssh/id_ed25519_macmini
+    IdentitiesOnly yes
+    ServerAliveInterval 30
+    ServerAliveCountMax 6
+```
+
+需要替换两处：
+
+- `HostName macmini-dev`：换成你的 Tailscale machine name；
+- `User yourname`：换成你的 Mac 用户名。
+
+以后在 **Windows PowerShell** 中只需要执行：
+
+```powershell
+ssh macmini
+```
+
+这个 `macmini` 是你在 SSH config 中定义的快捷名称。后面的 VS Code Remote SSH 也会直接读取它。
+
+#### 9.6 在手机安装 Termius
+
+在 iPhone App Store 或 Android Google Play 中搜索并安装 Termius。
+
+安装后先完成两件事：
+
+1. 打开手机上的 Tailscale，并确认处于连接状态；
+2. 打开 Termius，允许必要的本地通知和生物识别保护。
+
+Termius 是 SSH 客户端。它不会代替 Tailscale，也不会自动知道 Mac mini 在哪里。
+
+#### 9.7 在 Termius 中添加 Mac mini 主机
+
+Termius 将一台要连接的设备称为 **Host**。新建 Host 时填写：
+
+| 字段 | 填写内容 |
+|---|---|
+| Label | `Mac mini` |
+| Address | `macmini-dev` |
+| Port | `22` |
+| Username | 你的 Mac 用户名 |
+| Password | 第一次连接可临时填写 Mac 登录密码 |
+
+不同版本的 Termius 入口可能显示为 **New Host**、**Add Host** 或加号按钮，但需要填写的核心信息相同。
+
+保存后点击这个 Host。第一次连接同样会显示主机指纹，确认设备名称后继续。进入终端后执行：
+
+```bash
+whoami
+hostname
+```
+
+输出应该来自 Mac mini，而不是手机。
+
+如果 `macmini-dev` 无法解析，可以临时把 Address 改成 Tailscale 中显示的 Mac mini `100.x.x.x` 地址。设备名能正常工作后，再改回更容易记忆的名称。
+
+#### 9.8 给手机单独准备 SSH 密钥
+
+不要把 Windows 私钥发送到手机。更安全、也更容易撤销的做法，是在 Termius 的 Keychain 中生成一把手机专用密钥，例如：
+
+```text
+macmini-phone
+```
+
+复制这把密钥的**公钥**。私钥留在手机的 Termius 中，不要通过聊天软件发送。
+
+先使用密码登录 Mac mini，然后在 **Termius 连接的 Mac 终端**中执行：
+
+```bash
+mkdir -p ~/.ssh
+chmod 700 ~/.ssh
+cat >> ~/.ssh/authorized_keys
+```
+
+把刚才复制的公钥粘贴为完整一行，按回车，然后按 `Ctrl+D` 结束输入。继续执行：
+
+```bash
+chmod 600 ~/.ssh/authorized_keys
+```
+
+回到 Termius 的 Host 设置，把 `macmini-phone` 密钥指定为 SSH 凭据，然后重新连接。
+
+确认密钥登录成功前，不要删除 Host 中的密码，也不要修改 Mac mini 的密码登录设置。
+
+#### 9.9 从 Termius 回到 Claude Code 会话
+
+本章只确认手机能够进入 Mac mini。第 12 章配置 tmux 后，手机的实际路径会变成：
+
+```text
+手机 Tailscale
+→ Termius Host：Mac mini
+→ tmux 会话
+→ Claude Code CLI
+```
+
+届时断开 Termius 不会结束 tmux 中的 Claude Code CLI。重新连接后，使用第 12 章的 `tmux attach` 命令回到原会话。
+
+#### 9.10 常见连接问题先检查什么
+
+**提示 `Could not resolve hostname`：**先确认手机或 Windows 的 Tailscale 已连接，并检查 `macmini-dev` 是否与 Machines 页面名称一致。
+
+**提示 `Connection timed out`：**检查 Mac mini 是否开机、联网，Tailscale 是否在线，以及 Remote Login 是否仍然开启。
+
+**提示 `Permission denied`：**先检查 Mac 用户名是否正确；使用密钥时，再检查是否选中了对应私钥。
+
+**Termius 用 Tailscale IP 能连、设备名不能连：**说明 SSH 本身正常，问题更可能在 MagicDNS 或设备名称，不要重新生成密钥。
+
+> [!info] 官方参考
+> - [Apple：允许远程电脑访问 Mac](https://support.apple.com/guide/mac-help/allow-a-remote-computer-to-access-your-mac-mchlp1066/mac)
+> - [Microsoft：开始使用 Windows OpenSSH](https://learn.microsoft.com/windows-server/administration/openssh/openssh_install_firstuse)
+> - [Termius：移动端使用 AI Agent 的连接建议](https://termius.com/blog/8-tips-for-using-ai-agents-on-mobile-in-termius)
 
 ### 第 10 章　配置 VS Code Remote SSH
 
