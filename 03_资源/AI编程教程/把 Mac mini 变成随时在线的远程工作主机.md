@@ -1637,19 +1637,578 @@ Settings
 
 ### 第 14 章　让其他设备访问 Mac mini 上的 Web 服务
 
+这一章不讲如何开发或启动项目，只解决一个连接问题：Mac mini 上已经运行的 Web 或 API，怎样在 Windows 和手机上打开。
+
+整条链路是：
+
+```text
+Mac mini 上的服务端口
+→ VS Code Remote SSH 隧道
+→ Windows 上的转发端口
+→ Windows 浏览器或手机
+```
+
+#### 14.1 先确认目标服务和端口
+
+端口可以理解为一扇带编号的门。只有知道服务使用哪一个端口，VS Code 才知道应该转发哪一扇门。
+
+如果启动服务时终端显示了类似地址：
+
+```text
+http://localhost:3000
+```
+
+其中 `3000` 就是目标端口。不同项目可能使用 `3000`、`5173`、`8080` 或其他数字，不能根据教程猜测。
+
+如果不知道端口，可以在 **VS Code 的 Mac mini 远程终端**中查看正在监听的 TCP 端口：
+
+```bash
+lsof -nP -iTCP -sTCP:LISTEN
+```
+
+这条命令可能列出多个端口。你仍然需要根据服务启动时的提示，或询问维护这个项目的人，确认哪一个才是要访问的 Web 或 API。
+
+> [!warning] 本文只转发 Web 或测试 API
+> 不要因为看到端口就把所有端口都转发。尤其不要把不理解的系统服务或敏感服务开放给其他设备。
+
+#### 14.2 先让 Windows 自己访问成功
+
+在 Windows 上打开已经连接 Mac mini 的 VS Code 远程窗口：
+
+```text
+底部面板
+→ Ports（端口）
+→ Forward a Port（转发端口）
+→ 输入目标端口
+```
+
+假设远程服务使用 `3000`，VS Code 会显示一个 Windows 本地地址。先在 Windows 浏览器打开这个地址。
+
+如果 Windows 自己都打不开，先检查：
+
+- Mac mini 上的服务是否仍在运行；
+- 转发的端口号是否正确；
+- VS Code 是否仍显示 `SSH: macmini`；
+- Ports 面板里的转发是否仍然存在。
+
+Windows 访问成功后，再处理手机。这样可以把“远程端口没通”和“手机到 Windows 没通”分开排查。
+
+#### 14.3 让转发端口可以从手机访问
+
+第 10 章已经把 VS Code 设置 `remote.localPortHost` 改为：
+
+```json
+"allInterfaces"
+```
+
+它让 Windows 不只在 `localhost` 接收请求，也允许其他能够到达 Windows 的设备访问这个转发端口。
+
+修改设置后，删除旧的端口转发，再重新添加一次。已经存在的转发不一定会自动改用新监听方式。
+
+#### 14.4 优先使用 Windows 的 Tailscale 地址
+
+手机和 Windows 都打开 Tailscale 后，手机可以使用 Windows 的 Tailscale 设备名：
+
+```text
+http://win-laptop:3000
+```
+
+如果设备名无法解析，打开 Tailscale 查看 Windows 的 `100.x.x.x` 地址：
+
+```text
+http://100.x.x.x:3000
+```
+
+这里的 `3000` 要替换成 Ports 面板实际显示的 Windows 本地端口。VS Code 有时会因为端口冲突，将远程 `3000` 映射成另一个本地端口，所以不要只看远程端口一列。
+
+手机与 Windows 在同一个可信 Wi-Fi 时，也可以使用 Windows 的局域网 IP，但出差场景优先使用 Tailscale 地址。这样手机不需要和笔记本处于同一个 Wi-Fi。
+
+#### 14.5 Windows 防火墙弹窗怎么选
+
+Windows 可能在第一次监听端口时询问是否允许网络访问。只允许可信的专用网络，不要为了排错直接关闭整个防火墙。
+
+如果 Windows 浏览器能打开，手机却打不开，依次检查：
+
+1. 手机和 Windows 的 Tailscale 是否都已连接；
+2. 手机访问的是 Windows 地址，而不是 Mac mini 地址；
+3. URL 里的端口是否为 VS Code 显示的本地端口；
+4. `remote.localPortHost` 是否为 `allInterfaces`；
+5. Windows 防火墙是否阻止该端口。
+
+#### 14.6 端口转发不是正式发布
+
+VS Code 远程窗口关闭、SSH 断开或 Ports 面板中的转发被删除后，手机入口就会消失。这种方式适合自己临时查看和真机调试，不适合给普通用户长期使用。
+
+调试完成后，关闭不再需要的转发。下次重连时，重新确认本地端口，不要假设它永远不变。
+
+> [!info] 官方参考
+> - [VS Code：Remote Development using SSH](https://code.visualstudio.com/docs/remote/ssh)
+> - [Tailscale：MagicDNS](https://tailscale.com/docs/features/magicdns)
+
 ### 第 15 章　完成微信小程序远程真机调试
+
+这一章描述的是你已经跑通的真实场景：微信开发者工具运行在 Mac mini 上，Windows 负责远程桌面和端口转发，手机扫描开发者工具生成的二维码，同时通过 Windows 的 Tailscale 地址访问 Mac mini 上的 API。
+
+它不是正式部署，也不是让普通用户打开正式版小程序。
+
+#### 15.1 先看清两条同时发生的链路
+
+二维码与 API 请求是两件不同的事情。
+
+**打开小程序的链路：**
+
+```text
+Windows 远程桌面
+→ Mac mini 上的微信开发者工具
+→ 生成预览或真机调试二维码
+→ 手机微信扫码
+→ 打开开发版本小程序
+```
+
+**小程序访问本地 API 的链路：**
+
+```text
+手机中的开发版本小程序
+→ Windows 的 Tailscale 地址和转发端口
+→ VS Code Remote SSH 隧道
+→ Mac mini 上的本地 API
+```
+
+二维码只负责把开发版本打开到手机上，不会自动替你建立 API 隧道。端口转发必须提前配置好。
+
+#### 15.2 开始前确认四个入口都在线
+
+开始操作前确认：
+
+- Mac mini 上的目标 API 已经运行，并且端口明确；
+- Windows 的 VS Code 已连接 `macmini`，Ports 面板已转发 API 端口；
+- Windows 的 ToDesk 或网易 UU 远程能够操作 Mac mini 桌面；
+- Mac mini、Windows 和手机的 Tailscale 都处于连接状态。
+
+手机先用浏览器访问一次 Windows 的转发地址。如果浏览器访问不通，小程序也不会因为扫码而自动变通。
+
+#### 15.3 确认小程序使用的是笔记本地址
+
+小程序中的 API 地址需要指向 Windows 的 Tailscale 设备名或 Tailscale IP，例如：
+
+```text
+http://win-laptop:8080
+```
+
+或者：
+
+```text
+http://100.x.x.x:8080
+```
+
+这里的地址和端口都只是示例。端口必须与 VS Code Ports 面板中的 Windows 本地端口一致。
+
+本文不讲项目里在哪里修改 API 地址。不同项目可能使用设置页面、环境文件或启动参数。如果当前项目不能切换 API 地址，需要先让项目维护者提供入口；这不是 SSH 或端口转发能够自动解决的问题。
+
+> [!warning] 不要填 `localhost`
+> 手机小程序中的 `localhost` 指手机自己，不是 Mac mini，也不是 Windows。填 Mac mini 的本地地址同样无法自动穿过 VS Code 隧道；这里必须使用手机能够到达的 Windows 地址。
+
+#### 15.4 远程操作微信开发者工具
+
+在 Windows 上打开 ToDesk 或网易 UU 远程，进入 Mac mini 桌面，然后：
+
+1. 打开微信开发者工具；
+2. 登录拥有该小程序开发权限的微信账号；
+3. 打开目标小程序；
+4. 等待编译完成；
+5. 确认模拟器中没有立即出现连接错误。
+
+开发者工具界面和按钮位置会随版本变化，但常见入口仍然是顶部工具栏中的**预览**或**真机调试**。
+
+#### 15.5 预览与真机调试怎么选
+
+- 只想在手机上看看当前效果：选择**预览**；
+- 需要让开发者工具继续显示手机端日志和调试信息：选择**真机调试**。
+
+点击后，Mac mini 上会出现二维码。这个二维码会通过远程桌面画面显示到 Windows，因此手机可以直接扫描 Windows 屏幕上的二维码，不需要人在 Mac mini 旁边。
+
+二维码通常有有效期。如果扫码提示失效，回到远程桌面重新生成，不要继续排查 SSH。
+
+#### 15.6 手机扫码后观察哪两处
+
+手机扫码后同时观察：
+
+1. 手机是否成功打开开发版本小程序；
+2. Mac mini 上的 API 终端是否出现来自手机的新请求。
+
+如果小程序打开了，但 API 终端没有任何新请求，优先检查小程序中的 API 地址、Windows 转发端口和防火墙。
+
+如果 API 已收到请求，但小程序仍报错，说明三段网络链路大概率已经成立，问题更可能来自接口返回、权限或小程序本身。本文不进入业务代码排查。
+
+#### 15.7 微信平台限制要单独看待
+
+微信小程序对请求域名、协议、账号权限和调试方式有自己的限制。你已经跑通的本地链路适用于有开发权限的预览或真机调试，不代表正式版小程序和所有体验成员都能访问同一个本地地址。
+
+如果开发者工具或手机提示“合法域名”“HTTPS”“无开发权限”等错误，不要把它误判成 Tailscale 故障。应根据当前微信开放文档和项目设置确认调试权限。
+
+不要为了绕开平台限制，把本地端口直接暴露到公网。
+
+#### 15.8 这条链路断在哪里，现象就是什么
+
+| 断点 | 常见现象 |
+|---|---|
+| 远程桌面不可用 | 无法操作开发者工具、无法生成二维码 |
+| 二维码失效或账号无权限 | 手机无法打开开发版本 |
+| VS Code 转发消失 | 手机能打开小程序，但本地 API 请求失败 |
+| 手机访问了错误的 Windows 地址 | 浏览器和小程序都访问不到 API |
+| Mac mini API 已停止 | 转发仍在，但目标端口拒绝连接 |
+
+> [!info] 官方入口
+> - [微信开放文档：小程序](https://developers.weixin.qq.com/miniprogram/dev/framework/)
+> - [微信开发者工具下载](https://developers.weixin.qq.com/miniprogram/dev/devtools/download.html)
 
 ## 第三篇：日常怎么用
 
 ### 第 16 章　出差时建立远程连接
 
+整套配置完成后，日常使用不需要每次重新安装。出差时按从底层到上层的顺序连接，可以最快判断哪一层出现问题。
+
+#### 16.1 电脑端最短连接流程
+
+在 Windows 上依次执行：
+
+1. 连接当前可用网络；
+2. 打开 Tailscale，确认 `macmini-dev` 在线；
+3. 在 PowerShell 执行：
+
+```powershell
+ssh macmini
+```
+
+4. 确认 SSH 可用后退出；
+5. 打开 VS Code，连接 Remote SSH 主机 `macmini`；
+6. 打开 Mac mini 上需要使用的远程目录；
+7. 打开 VS Code 远程终端；
+8. 恢复需要的 tmux 会话。
+
+恢复 Claude Code 会话时执行：
+
+```bash
+tmux attach -t claude
+```
+
+只有需要微信开发者工具或系统设置时，才打开 ToDesk 或网易 UU 远程桌面。
+
+#### 16.2 使用 Codex 时的连接顺序
+
+Codex 桌面端使用 Mac mini 时，先确认：
+
+```powershell
+ssh macmini "codex --version"
+```
+
+然后打开桌面 App，在已保存的连接中选择 `macmini` 和对应远程目录。
+
+如果手机也要使用 Remote，桌面主机必须保持在线，Remote Control 也要处于开启状态。
+
+#### 16.3 要预览页面时再恢复端口
+
+VS Code Remote SSH 重连后，打开 Ports 面板检查目标端口。不要只因为昨天使用过，就假设今天的转发仍然存在或本地端口没有变化。
+
+需要手机访问时，再确认 `remote.localPortHost` 为 `allInterfaces`，并使用 Windows 的 Tailscale 地址。
+
+#### 16.4 网络较差时优先保住文字通道
+
+连接质量较差时，优先级建议是：
+
+```text
+Tailscale
+→ SSH / Termius
+→ VS Code Remote SSH
+→ Codex Remote
+→ 远程桌面
+```
+
+远程桌面需要持续传输画面，最容易受到延迟影响。SSH 能正常使用时，不必因为远程桌面卡顿就判断整套远程主机已经失效。
+
 ### 第 17 章　网络中断后如何继续任务
+
+网络中断时，先区分两件事：是随身设备与 Mac mini 的**连接断了**，还是 Mac mini 上的**任务真的停了**。
+
+#### 17.1 只有笔记本或手机断网
+
+如果 Claude Code CLI 运行在 tmux 中，客户端断网通常只会中断画面。Mac mini 上的 tmux 会话仍然存在。
+
+网络恢复后按顺序操作：
+
+1. 恢复 Windows 或手机网络；
+2. 确认 Tailscale 已重新连接；
+3. 重新使用 VS Code Remote SSH 或 Termius 登录 Mac mini；
+4. 执行：
+
+```bash
+tmux ls
+tmux attach -t claude
+```
+
+看到原来的对话界面后，再继续输入。
+
+#### 17.2 VS Code 窗口断开
+
+VS Code 提示连接丢失时，可以先点击重连。失败后关闭当前远程窗口，重新执行：
+
+```text
+Remote-SSH: Connect to Host
+→ macmini
+```
+
+重新连接后检查三处：远程目录是否正确、tmux 会话是否还在、Ports 面板是否需要重新转发。
+
+#### 17.3 Termius 在手机后台断开
+
+重新打开 Tailscale，再打开 Termius Host。进入 Mac mini 后执行：
+
+```bash
+tmux attach -t claude
+```
+
+不要因为 Termius 显示一个新的空终端，就再次启动一份 Claude Code。先执行 `tmux ls` 查找原会话。
+
+#### 17.4 Codex 手机 Remote 断开
+
+Codex Remote 断开时依次检查：
+
+1. 手机网络是否恢复；
+2. 手机 App 是否仍登录正确账号和 workspace；
+3. 已配对的 Windows 桌面主机是否在线、桌面 App 是否运行；
+4. Windows 是否还能 `ssh macmini`；
+5. Mac mini 是否在线，远程 `codex` 命令是否可用。
+
+重新登录 ChatGPT 后，Remote Control 可能需要重新打开，但原有设备配对不一定会被删除。
+
+#### 17.5 Mac mini 自己离线
+
+如果 Tailscale Machines 页面显示 `macmini-dev` 离线，Windows 和手机都无法 SSH，问题通常已经不在客户端。
+
+可能原因包括：
+
+- Mac mini 断电或重启后没有正常启动；
+- Mac mini 进入睡眠；
+- 家庭或办公室网络中断；
+- Tailscale 退出或需要重新认证；
+- FileVault 或系统登录阻挡了服务启动。
+
+这类问题无法靠反复刷新 VS Code 修复。尝试备用远程桌面；如果所有入口都失效，就需要现场人员检查电源、网络和登录状态。
 
 ### 第 18 章　如何在电脑之间切换而不搬运行环境
 
+使用新电脑时，目标不是把 Mac mini 的全部内容复制一份，而是给新电脑增加一把独立的“门钥匙”。
+
+#### 18.1 新电脑只安装连接工具
+
+新电脑需要准备：
+
+- Tailscale；
+- Windows OpenSSH Client；
+- VS Code 与 Remote - SSH；
+- 你选择的远程桌面控制端；
+- 需要时安装 Codex/ChatGPT 桌面 App。
+
+文件、Claude Code CLI、tmux 会话和运行中的服务仍然留在 Mac mini。
+
+#### 18.2 每台电脑生成自己的 SSH 密钥
+
+不要把旧电脑的 SSH 私钥通过网盘或聊天软件复制给新电脑。
+
+在**新电脑的 PowerShell**中生成新的专用密钥，例如：
+
+```powershell
+ssh-keygen -t ed25519 -f $HOME\.ssh\id_ed25519_macmini -C "new-windows-to-macmini"
+```
+
+把新电脑的公钥加入 Mac mini 的 `~/.ssh/authorized_keys`，再为新电脑创建自己的 SSH config。
+
+这样旧电脑丢失或停用时，只需从 Mac mini 删除对应的那一行公钥，不会影响其他设备。
+
+#### 18.3 可以迁移什么，不应该迁移什么
+
+可以安全迁移或重新创建：
+
+- SSH config 中不含秘密的主机名称和用户名；
+- VS Code 的普通界面设置；
+- 远程桌面设备绑定；
+- 重新创建 Codex Remote 的设备配对。
+
+不要随意复制：
+
+- SSH 私钥；
+- Termius 中的私钥；
+- Mac 登录密码；
+- Tailscale 或 AI 工具的认证文件；
+- Mac mini 上整套运行目录。
+
+#### 18.4 更换电脑后，会话为什么还在
+
+新电脑连接的仍然是同一台 Mac mini，所以执行：
+
+```bash
+tmux ls
+tmux attach -t claude
+```
+
+看到的是原来的 tmux 会话。连续性来自固定主机，而不是来自把会话同步到了新电脑。
+
+#### 18.5 旧电脑丢失时立即撤销入口
+
+如果旧电脑丢失：
+
+1. 在 Tailscale Machines 页面移除或禁用旧设备；
+2. 在 Mac mini 的 `~/.ssh/authorized_keys` 删除旧电脑公钥；
+3. 在远程桌面账号中移除旧设备并修改无人值守密码；
+4. 在 Codex/ChatGPT 桌面 App 的 Connections 中撤销对应配对；
+5. 检查相关账号登录记录并修改必要密码。
+
+不要只修改 Windows 开机密码。远程入口需要逐层撤销。
+
 ### 第 19 章　在手机上继续 Claude Code 与 Codex 会话
 
+手机上有两个入口，分别对应两套不同的连接方式：
+
+```text
+Claude Code：Tailscale + Termius + SSH + tmux
+Codex：手机 App 的 Remote + 已配对的桌面主机
+```
+
+#### 19.1 用 Termius 查看 Claude Code
+
+依次操作：
+
+1. 打开手机 Tailscale；
+2. 确认 `macmini-dev` 在线；
+3. 打开 Termius；
+4. 连接 Mac mini Host；
+5. 执行：
+
+```bash
+tmux attach -t claude
+```
+
+进入后可以查看最近的 Claude 对话、确认任务是否等待输入，并进行少量回复。
+
+#### 19.2 手机键盘操作的注意事项
+
+tmux 快捷键需要先输入 `Ctrl+b`。手机软键盘不方便时，可以使用 Termius 的特殊按键栏。
+
+如果只想退出但保留会话，仍然使用：
+
+```text
+Ctrl+b
+然后按 d
+```
+
+不要用 `exit` 或 `tmux kill-session` 代替 detach，也不要因为手机显示拥挤就重新创建同名任务。
+
+#### 19.3 用手机 Remote 继续 Codex
+
+第一次已经完成配对后：
+
+1. 打开 Codex/ChatGPT 手机 App；
+2. 进入 **Remote**；
+3. 选择已配对的桌面主机；
+4. 选择桌面 App 已配置好的 Mac mini 远程项目或任务；
+5. 查看输出、发送后续消息或处理需要确认的操作。
+
+如果列表中没有主机，回到第 13 章检查桌面 App 的 **Set up Remote** 和 **Settings → Connections**。
+
+#### 19.4 为什么两条路径不能混用
+
+Termius 显示的是 Mac mini 的普通 SSH 终端，因此它能进入 tmux 中的 Claude Code CLI。
+
+手机 App 的 Remote 显示的是 Codex 远程任务，由已配对的桌面主机及其 SSH 连接提供环境。它不会列出 tmux 中的 Claude Code 会话。
+
+所以：
+
+- Termius 里找不到 Codex Remote 任务是正常的；
+- Codex Remote 里看不到 Claude Code 的 tmux 界面也是正常的。
+
+#### 19.5 手机适合做什么
+
+手机适合：
+
+- 查看长任务是否完成；
+- 回答一个等待确认的问题；
+- 补充少量说明；
+- 在电脑暂时没电时保持连接连续性。
+
+复杂的文件浏览、大量文字输入和图形界面操作仍然更适合 Windows。手机是随身入口，不是必须取代电脑。
+
 ### 第 20 章　如何远程查看 Web 和小程序
+
+这一章把前面的操作压缩成几张场景卡。遇到具体需求时，直接选择对应路线，不要把所有工具全部打开。
+
+#### 20.1 在 Windows 浏览器查看 Web
+
+```text
+Windows Tailscale
+→ VS Code Remote SSH 连接 macmini
+→ Ports 面板转发目标端口
+→ Windows 浏览器打开 VS Code 提供的本地地址
+```
+
+这一场景不需要远程桌面，也不需要手机 Termius。
+
+#### 20.2 在手机浏览器查看 Web
+
+```text
+手机和 Windows 都连接 Tailscale
+→ VS Code 转发端口绑定 allInterfaces
+→ 手机打开 http://win-laptop:端口
+```
+
+先在 Windows 浏览器确认转发可用，再从手机访问。
+
+#### 20.3 在手机查看微信小程序
+
+```text
+Windows 远程桌面进入 Mac mini
+→ 微信开发者工具生成预览二维码
+→ 手机微信扫码打开开发版本
+
+同时：
+手机小程序
+→ Windows Tailscale 地址和端口
+→ VS Code Remote SSH 隧道
+→ Mac mini API
+```
+
+这个场景需要远程桌面、VS Code 端口转发和手机扫码三部分同时成立。
+
+#### 20.4 在手机查看 Claude Code
+
+```text
+手机 Tailscale
+→ Termius SSH
+→ Mac mini
+→ tmux attach -t claude
+```
+
+这一场景不需要 VS Code 保持打开，也不需要远程桌面。
+
+#### 20.5 在手机查看 Codex
+
+```text
+手机 App 的 Remote
+→ 已配对的桌面主机
+→ 桌面 App 的 macmini SSH 连接
+→ Mac mini 远程环境
+```
+
+这一场景依赖桌面主机和桌面 App 在线，不能用 Termius 替代。
+
+#### 20.6 最容易混淆的三个地址
+
+| 地址 | 代表什么 | 手机能否直接使用 |
+|---|---|---|
+| `localhost:端口` | 当前这台设备自己 | 在手机里只代表手机，不代表电脑 |
+| `macmini-dev` | Mac mini 的 Tailscale 设备名 | 可用于 SSH，但不能代替 VS Code 转发后的 Windows 端口 |
+| `win-laptop:端口` | Windows 的 Tailscale 设备名和转发端口 | 本文手机访问 Web/API 的推荐入口 |
+
+当手机无法访问时，先确认地址指向谁，再检查工具。很多“网络故障”其实只是把 `localhost` 写在了错误的设备上。
 
 ## 第四篇：安全、恢复与故障排查
 
