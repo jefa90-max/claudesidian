@@ -34,9 +34,23 @@
               "icon": "lucide-file",
               "title": "快捷命令"
             }
+          },
+          {
+            "id": "2bfa386dc48b3054",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "01_项目/00_政府项目_景泰项目/03-调研与资料/快捷命令.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "快捷命令"
+            }
           }
         ],
-        "currentTab": 1
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -224,8 +238,9 @@
       "obsidian42-brat:BRAT": false
     }
   },
-  "active": "ce8b7e5cf82d769c",
+  "active": "2bfa386dc48b3054",
   "lastOpenFiles": [
+    "00_收件箱/2026-10-08.md",
     "00_收件箱/2026-10-07.md",
     "00_收件箱/2026-10-06.md",
     "00_收件箱/2026-10-05.md",
@@ -251,7 +266,6 @@
     "00_收件箱/2026-09-07.md",
     "00_收件箱/2026-09-04.md",
     "00_收件箱/2026-09-03.md",
-    "00_收件箱/2026-09-02.md",
     "tasks",
     "02_领域/健康健身/食谱",
     "01_项目/00_政府项目_售前支持/08-风险与问题",
